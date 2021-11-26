@@ -10,6 +10,8 @@
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  /* Keep in mind its parent element that might cause unexpected behavior
+  use body as its parent! */
   position: sticky;
   top: 0;
   z-index: 100;
@@ -74,6 +76,7 @@
 }
 
 .nav-links-mobile {
+  /* hide it for the large screen */
   display: none;
 }
 
