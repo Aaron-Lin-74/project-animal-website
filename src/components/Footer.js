@@ -29,10 +29,18 @@ const Footer = () => {
       </section>
       <section className='footer-links'>
         <div className='footer-nav-items'>
-          <Link to='/'>Contact</Link>
-          <Link to='/about'>About Us</Link>
-          <Link to='/'>FAQ</Link>
-          <Link to='/'>Terms of Use</Link>
+          <Link className='footer-btn' to='/'>
+            Contact
+          </Link>
+          <Link className='footer-btn' to='/about'>
+            About Us
+          </Link>
+          <Link className='footer-btn' to='/'>
+            FAQ
+          </Link>
+          <Link className='footer-btn' to='/'>
+            Terms of Use
+          </Link>
         </div>
       </section>
       <section className='social-media'>
