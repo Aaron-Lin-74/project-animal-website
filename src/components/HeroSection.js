@@ -13,6 +13,7 @@ const HeroSection = () => {
           className='btns'
           buttonStyle='btn--outline'
           buttonSize='btn--large'
+          path='/sign-up'
         >
           GET STARTED
         </Button>
