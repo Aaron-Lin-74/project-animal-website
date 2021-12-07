@@ -1,20 +1,17 @@
 .footer-container {
-  background: rgb(254, 193, 130);
-  background: linear-gradient(
-    50deg,
-    rgba(254, 193, 130, 1) 20%,
-    rgba(253, 160, 142, 1) 100%
-  );
+  background: var(--backgroundColor);
   padding: 3rem 0 1.5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-width: 320px;
+  margin-bottom: 1rem;
 }
 
 .footer-logo > a {
   text-decoration: none;
-  color: white;
+  color: var(--mainFontColor);
   font-size: 1.5rem;
 }
 .footer-subscription {
@@ -23,7 +20,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--mainFontColor);
   margin-bottom: 1.5rem;
   padding: 1.5rem;
   border: 2px solid white;
@@ -66,7 +63,7 @@
   justify-content: space-between;
 }
 .footer-nav-items > a {
-  color: white;
+  color: var(--mainFontColor);
   text-decoration: none;
 }
 
@@ -79,7 +76,7 @@
 }
 /* social icon */
 .social-icon-link {
-  color: white;
+  color: var(--mainFontColor);
   font-size: 1.5rem;
   transition: all 0.2s linear;
 }
@@ -110,8 +107,7 @@
 }
 
 .website-rights {
-  color: white;
-  margin-bottom: 16px;
+  color: var(--mainFontColor);
 }
 
 @media screen and (max-width: 720px) {

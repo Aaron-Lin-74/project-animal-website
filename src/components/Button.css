@@ -14,7 +14,7 @@
 
 .btn--outline {
   background-color: transparent;
-  color: #fff;
+  color: var(--mainFontColor);
   padding: 8px 20px;
   border: 1px solid #fff;
   transition: all 0.3s ease-out;
@@ -40,5 +40,5 @@
 
 .btn--primary:hover {
   background-color: transparent;
-  color: #fff;
+  color: var(--mainFontColor);
 }
