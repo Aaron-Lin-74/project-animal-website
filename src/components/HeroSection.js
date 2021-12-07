@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from './Button'
+import { FaPlayCircle } from 'react-icons/fa'
 import './HeroSection.css'
 
 const HeroSection = () => {
@@ -21,8 +22,9 @@ const HeroSection = () => {
           className='btns'
           buttonStyle='btn--primary'
           buttonSize='btn--large'
+          path='/'
         >
-          WATCH <i className='far fa-play-circle' />
+          WATCH <FaPlayCircle />
         </Button>
       </div>
     </div>

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 import Button from './Button'
+import { FaTimes, FaBars } from 'react-icons/fa'
+import { GiTigerHead } from 'react-icons/gi'
 
 function Navbar() {
   // use click state to control the appearance of menu and button
@@ -26,10 +28,10 @@ function Navbar() {
     <nav className='navbar'>
       <div className='navbar-container'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-          Learn Animals <i class='fas fa-cat'></i>
+          Learn Animals <GiTigerHead />
         </Link>
         <div className='menu-icon' onClick={handleClick}>
-          <i className={click ? 'fas fa-times' : 'fas fa-bars'}></i>
+          {click ? <FaTimes /> : <FaBars />}
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
@@ -65,7 +67,11 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        {button && <Button buttonStyle='btn--outline'>Sign Up </Button>}
+        {button && (
+          <Button buttonStyle='btn--outline' path='/sign-up'>
+            Sign Up
+          </Button>
+        )}
       </div>
     </nav>
   )
