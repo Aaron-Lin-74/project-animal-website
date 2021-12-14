@@ -20,7 +20,7 @@ const HeroSection = () => {
     window.open('https://www.youtube.com/watch?v=MhhAox6Zei8', '_blank')
   }
   return (
-    <div className='hero-container'>
+    <section className='hero-container'>
       <video ref={videoRef} autoPlay loop muted poster='/images/panda.jpg'>
         <source src='/videos/animals.mp4' type='video/mp4' />
         <source src='/videos/animals.webm' type='video/webm' />
@@ -56,7 +56,7 @@ const HeroSection = () => {
           Watch <FaPlayCircle />
         </Button>
       </div>
-    </div>
+    </section>
   )
 }
 
