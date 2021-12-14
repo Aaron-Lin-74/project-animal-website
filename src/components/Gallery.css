@@ -1,11 +1,11 @@
 /* mobile first design */
 .gallery {
-  padding: 4rem;
+  /* padding: 4rem; */
   background: #fff;
 }
 .gallery-wrapper {
   line-height: 1.5rem;
-  padding: 30px 40px;
+  padding: 0;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -49,16 +49,24 @@
   padding: 5px;
   line-height: 0.1em;
 }
+@media (max-width: 767px) {
+  .gallery {
+    padding: 0;
+  }
+}
 
 @media (min-width: 768px) {
-  .gallery .gallery-wrapper {
-    padding: 0;
+  .gallery {
+    padding: 4rem;
+  }
+  .gallery-wrapper {
+    padding: 30px 40px;
   }
   .gallery-flex > div {
     flex-basis: 33.333%;
   }
 
-  .gallery-flex .gal-flex-full {
+  .gal-flex-item:first-child {
     flex-basis: 100%;
   }
 
@@ -66,7 +74,7 @@
     height: 35vh;
   }
 
-  .gal-flex-full .gal-img {
+  .gal-flex-item:first-child .gal-img {
     height: 45vh;
   }
 }
