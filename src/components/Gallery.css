@@ -1,0 +1,72 @@
+/* mobile first design */
+.gallery {
+  padding: 4rem;
+  background: #fff;
+}
+.gallery-wrapper {
+  line-height: 1.5rem;
+  padding: 30px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.gallery-flex {
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+.gallery-flex > div {
+  flex-basis: 50%;
+  padding: 1px;
+  position: relative;
+}
+
+.gallery-flex a {
+  overflow: hidden;
+  display: block;
+}
+
+.gal-img {
+  transition: all 1s ease;
+  width: 100%;
+  object-position: top;
+  object-fit: cover;
+  height: 20vh;
+}
+
+.gallery-flex > div:hover .gal-img {
+  transform: scale(1.1);
+}
+
+.gal-add {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: #fff;
+  color: #1c69d4;
+  font-size: 20px;
+  border-radius: 50%;
+  padding: 5px;
+  line-height: 0.1em;
+}
+
+@media (min-width: 768px) {
+  .gallery .gallery-wrapper {
+    padding: 0;
+  }
+  .gallery-flex > div {
+    flex-basis: 33.333%;
+  }
+
+  .gallery-flex .gal-flex-full {
+    flex-basis: 100%;
+  }
+
+  .gal-img {
+    height: 35vh;
+  }
+
+  .gal-flex-full .gal-img {
+    height: 45vh;
+  }
+}
