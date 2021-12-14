@@ -4,32 +4,47 @@ import './Cards.css'
 
 const Cards = () => {
   return (
-    <div className='cards'>
-      <h1> Check out these amazing animals </h1>
+    <section className='cards'>
+      <h1> Explore different types of animals </h1>
       <div className='cards-container'>
         <div className='cards-wrapper'>
-          <ul className='card-items'>
+          <ul className='card-items-l'>
             <CardItem
               src='images/tiger.jpg'
-              text='Explore the fierce tiger inside the forest'
-              label='Test'
+              text='Mammals include humans and all other animals that are warm-blooded vertebrates (vertebrates have backbones) with hair. They feed their young with milk and have a more well-developed brain.  '
+              label='Mammals'
               path='/'
             />
             <CardItem
-              src='images/elephant.jpg'
-              text='Giant elephant in Affrica'
-              label='Test'
+              src='images/cockatoo.jpg'
+              text={`Birds are warm-blooded vertebrates (vertebrates have backbones) and are the only animals with feathers. Although all birds have wings, a few species can't fly.`}
+              label='Birds'
               path='/'
             />
           </ul>
-          <ul className='card-items'>
-            <CardItem src='images/bear.jpg' text='Bear' label='Test' path='/' />
-            <CardItem src='images/wolf.jpg' text='Wolf' label='Test' path='/' />
-            <CardItem src='images/lion.jpg' text='Lion' label='Test' path='/' />
+          <ul className='card-items-s'>
+            <CardItem
+              src='images/the_frilled_neck_lizard.jpg'
+              text='Reptiles are cold-blooded vertebrates. (Vertebrates have backbones.) They have dry skin covered with scales or bony plates and usually lay soft-shelled eggs.'
+              label='Reptiles'
+              path='/'
+            />
+            <CardItem
+              src='images/lion_fish.jpg'
+              text='Fish are vertebrates (vertebrates have backbones) that live in water. They breathe using special organs called gills.'
+              label='Fish'
+              path='/'
+            />
+            <CardItem
+              src='images/tree_frog.jpg'
+              text='Amphibians are cold-blooded vertebrates (vertebrates have backbones) that don’t have scales. They live part of their lives in water and part on land.'
+              label='Amphibians'
+              path='/'
+            />
           </ul>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

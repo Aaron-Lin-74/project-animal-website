@@ -52,11 +52,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.login .card,
-.sign-up .card {
-  background: var(--backgroundColor);
+  color: var(--mainFontColor);
 }
 
 @media only screen and (max-width: 768px) {
