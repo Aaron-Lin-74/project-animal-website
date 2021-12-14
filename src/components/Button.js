@@ -14,7 +14,7 @@ const Button = ({ children, type, onClick, buttonStyle, buttonSize, path }) => {
   return (
     <Link to={path || '/'}>
       <button
-        className={`btn ${checkButtonStyle} ${checkButtonSize}`}
+        className={`btns ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
         type={type}
       >

@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import Button from './Button'
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs'
+import { GiTigerHead } from 'react-icons/gi'
 const Footer = () => {
   return (
     <div className='footer-container'>
@@ -47,7 +49,7 @@ const Footer = () => {
         <div className='social-media-wrapper'>
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
-              Learn Animals <i class='fas fa-cat'></i>
+              Learn Animals <GiTigerHead />
             </Link>
           </div>
           <small className='website-rights'>Learn Animals © 2021</small>
@@ -59,7 +61,7 @@ const Footer = () => {
               rel='noreferrer'
               aria-label='Facebook'
             >
-              <i className='fab fa-facebook'></i>
+              <BsFacebook />
             </a>
             <a
               className='social-icon-link instagram'
@@ -68,7 +70,7 @@ const Footer = () => {
               rel='noreferrer'
               aria-label='Instagram'
             >
-              <i className='fab fa-instagram'></i>
+              <BsInstagram />
             </a>
             <a
               className='social-icon-link twitter'
@@ -77,7 +79,7 @@ const Footer = () => {
               rel='noreferrer'
               aria-label='Twitter'
             >
-              <i className='fab fa-twitter'></i>
+              <BsTwitter />
             </a>
             <a
               className='social-icon-link youtube'
@@ -86,7 +88,7 @@ const Footer = () => {
               rel='noreferrer'
               aria-label='Youtube'
             >
-              <i className='fab fa-youtube'></i>
+              <BsYoutube />
             </a>
           </div>
         </div>

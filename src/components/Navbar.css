@@ -1,10 +1,5 @@
 .navbar {
-  background: rgb(254, 193, 130);
-  background: linear-gradient(
-    50deg,
-    rgba(254, 193, 130, 1) 20%,
-    rgba(253, 160, 142, 1) 100%
-  );
+  background: var(--backgroundColor);
   height: 80px;
   display: flex;
   justify-content: center;
@@ -15,6 +10,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  min-width: 320px;
 }
 
 .navbar-container {
@@ -26,7 +22,7 @@
 }
 
 .navbar-logo {
-  color: #fff;
+  color: var(--mainFontColor);
   justify-self: start;
   margin-left: 20px;
   cursor: pointer;
@@ -37,20 +33,13 @@
 }
 
 .nav-menu {
-  /* display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 60vw;
-  justify-content: end;
-  margin-right: 2rem; */
   list-style: none;
   display: flex;
   width: 60vw;
   justify-content: space-around;
   padding-left: 4rem;
   text-align: center;
+  margin-bottom: 0;
 }
 
 .nav-item {
@@ -58,7 +47,7 @@
 }
 
 .nav-links {
-  color: #fff;
+  color: var(--mainFontColor);
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -72,7 +61,7 @@
 }
 
 .fa-bars {
-  color: #fff;
+  color: var(--mainFontColor);
 }
 
 .nav-links-mobile {
@@ -142,7 +131,7 @@
   }
 
   .fa-times {
-    color: #fff;
+    color: var(--mainFontColor);
     font-size: 2rem;
   }
 
@@ -155,7 +144,7 @@
     text-decoration: none;
     font-size: 1.5rem;
     background-color: transparent;
-    color: #fff;
+    color: var(--mainFontColor);
     padding: 14px 20px;
     border: 1px solid #fff;
     transition: all 0.3s ease-out;

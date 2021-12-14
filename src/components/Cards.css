@@ -44,6 +44,7 @@ h1 {
 .card-item-img-wrap {
   position: relative;
   width: 100%;
+  min-height: 70%;
   height: 70%;
   overflow: hidden;
 }
@@ -57,7 +58,7 @@ h1 {
   max-width: calc((100%) - 60px);
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: var(--mainFontColor);
   background-color: #1f98f4;
   box-sizing: border-box;
 }

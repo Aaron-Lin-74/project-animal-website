@@ -1,16 +1,17 @@
 import React from 'react'
-import SignUpForm from '../SignUpForm'
+import LoginForm from '../LoginForm'
 import { Container } from 'react-bootstrap'
-const SignUp = () => {
+
+const Login = () => {
   return (
-    <div className='sign-up'>
+    <div className='login'>
       <Container className='d-flex align-items-center justify-content-center'>
         <div className='w-100' style={{ maxWidth: '400px' }}>
-          <SignUpForm />
+          <LoginForm />
         </div>
       </Container>
     </div>
   )
 }
 
-export default SignUp
+export default Login
