@@ -3,6 +3,7 @@ import HeroSection from '../HeroSection'
 import '../../App.css'
 import Cards from '../Cards'
 import Gallery from '../Gallery'
+import Reviews from '../Reviews'
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       <HeroSection />
       <Gallery />
       <Cards />
+      <Reviews />
     </div>
   )
 }
