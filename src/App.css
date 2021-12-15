@@ -16,6 +16,10 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
+body {
+  width: 100%;
+}
+
 .home,
 .services,
 .products,

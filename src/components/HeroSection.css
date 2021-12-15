@@ -16,6 +16,8 @@ video {
   justify-content: center;
   object-fit: contain;
   position: relative;
+  /* cover the black line of the video */
+  top: -5px;
 }
 
 .hero-container > h1 {

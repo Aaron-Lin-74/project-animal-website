@@ -21,7 +21,14 @@ const HeroSection = () => {
   }
   return (
     <section className='hero-container'>
-      <video ref={videoRef} autoPlay loop muted poster='/images/panda.jpg'>
+      <video
+        id='hero-video'
+        ref={videoRef}
+        autoPlay
+        loop
+        muted
+        poster='/images/panda.jpg'
+      >
         <source src='/videos/animals.mp4' type='video/mp4' />
         <source src='/videos/animals.webm' type='video/webm' />
       </video>
