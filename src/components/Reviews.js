@@ -43,7 +43,7 @@ const Reviews = () => {
   // Let the reivews keep rolling
   useEffect(() => {
     const slider = setInterval(() => {
-      setIndex(index + 1)
+      setIndex((index) => index + 1)
     }, 4000)
     return () => clearInterval(slider)
   })
