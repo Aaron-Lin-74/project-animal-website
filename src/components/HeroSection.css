@@ -17,7 +17,7 @@ video {
   object-fit: contain;
   position: relative;
   /* cover the black line of the video */
-  top: -5px;
+  top: -15px;
 }
 
 .hero-container > h1 {
@@ -42,7 +42,7 @@ video {
 
 .toggle-hero-video {
   position: absolute;
-  top: 2px;
+  top: 20px;
   left: 5px;
 }
 

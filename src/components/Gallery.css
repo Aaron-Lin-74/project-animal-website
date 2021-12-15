@@ -1,6 +1,5 @@
 /* mobile first design */
 .gallery {
-  /* padding: 4rem; */
   background: #fff;
 }
 .gallery-wrapper {
@@ -60,7 +59,7 @@
     padding: 4rem;
   }
   .gallery-wrapper {
-    padding: 30px 40px;
+    padding: 30px 10px;
   }
   .gallery-flex > div {
     flex-basis: 33.333%;
