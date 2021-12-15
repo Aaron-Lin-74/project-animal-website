@@ -10,7 +10,7 @@ const Cards = () => {
         <div className='cards-wrapper'>
           <ul className='card-items-l'>
             <CardItem
-              src='images/tiger.jpg'
+              src='images/fennec.jpg'
               text='Mammals include humans and all other animals that are warm-blooded vertebrates (vertebrates have backbones) with hair. They feed their young with milk and have a more well-developed brain.  '
               label='Mammals'
               path='/'
@@ -39,6 +39,12 @@ const Cards = () => {
               src='images/tree_frog.jpg'
               text='Amphibians are cold-blooded vertebrates (vertebrates have backbones) that don’t have scales. They live part of their lives in water and part on land.'
               label='Amphibians'
+              path='/'
+            />
+            <CardItem
+              src='images/sea_star.jpg'
+              text='Invertebrates are animals without a backbone or bony skeleton. They range in size from microscopic mites and almost invisible flies to giant squid with soccer-ball-size eyes.'
+              label='Invertebrates '
               path='/'
             />
           </ul>
