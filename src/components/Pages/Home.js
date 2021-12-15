@@ -4,14 +4,17 @@ import '../../App.css'
 import Cards from '../Cards'
 import Gallery from '../Gallery'
 import Reviews from '../Reviews'
+import { HomeProvider } from '../contexts/HomeContext'
 
 const Home = () => {
   return (
     <div>
-      <HeroSection />
-      <Gallery />
-      <Cards />
-      <Reviews />
+      <HomeProvider>
+        <HeroSection />
+        <Gallery />
+        <Cards />
+        <Reviews />
+      </HomeProvider>
     </div>
   )
 }

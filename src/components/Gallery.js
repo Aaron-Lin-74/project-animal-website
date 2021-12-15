@@ -1,8 +1,12 @@
 import React from 'react'
 import './Gallery.css'
 import { HiPlus } from 'react-icons/hi'
+import GalleryModal from './GalleryModal'
+import { useHomeContext } from './contexts/HomeContext'
 
 const Gallery = () => {
+  const { isModalOpen, openModal } = useHomeContext()
+  const images = ['quokka', 'panda', 'koala', 'red_panda']
   return (
     <section className='gallery'>
       <div className='ani-info'>
@@ -14,40 +18,21 @@ const Gallery = () => {
       </div>
       <div className='gallery-wrapper'>
         <div className='gallery-flex'>
-          <div className='gal-flex-full'>
-            <a href='/images/quokka.jpg'>
-              <img className='gal-img' src='/images/quokka.jpg'></img>
-              <span className='gal-add'>
-                <HiPlus />
-              </span>
-            </a>
-          </div>
-          <div>
-            <a>
-              <img className='gal-img' src='/images/panda.jpg'></img>
-              <span className='gal-add'>
-                <HiPlus />
-              </span>
-            </a>
-          </div>
-          <div>
-            <a>
-              <img className='gal-img' src='/images/koala.jpg'></img>
-              <span className='gal-add'>
-                <HiPlus />
-              </span>
-            </a>
-          </div>
-          <div>
-            <a>
-              <img className='gal-img' src='/images/red_panda.jpg'></img>
-              <span className='gal-add'>
-                <HiPlus />
-              </span>
-            </a>
-          </div>
+          {images.map((image, ind) => {
+            return (
+              <div className='gal-flex-item' onClick={() => openModal(ind)}>
+                <a>
+                  <img className='gal-img' src={`/images/${image}.jpg`}></img>
+                  <span className='gal-add'>
+                    <HiPlus />
+                  </span>
+                </a>
+              </div>
+            )
+          })}
         </div>
       </div>
+      {isModalOpen && <GalleryModal images={images} />}
     </section>
   )
 }
