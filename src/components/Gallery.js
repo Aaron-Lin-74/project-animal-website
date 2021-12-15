@@ -1,8 +1,11 @@
 import React from 'react'
 import './Gallery.css'
 import { HiPlus } from 'react-icons/hi'
+import GalleryModal from './GalleryModal'
+import { useHomeContext } from './contexts/HomeContext'
 
 const Gallery = () => {
+  const { isModalOpen, openModal } = useHomeContext()
   const images = ['quokka', 'panda', 'koala', 'red_panda']
   return (
     <section className='gallery'>
@@ -15,9 +18,9 @@ const Gallery = () => {
       </div>
       <div className='gallery-wrapper'>
         <div className='gallery-flex'>
-          {images.map((image) => {
+          {images.map((image, ind) => {
             return (
-              <div className='gal-flex-item'>
+              <div className='gal-flex-item' onClick={() => openModal(ind)}>
                 <a>
                   <img className='gal-img' src={`/images/${image}.jpg`}></img>
                   <span className='gal-add'>
@@ -29,6 +32,7 @@ const Gallery = () => {
           })}
         </div>
       </div>
+      {isModalOpen && <GalleryModal images={images} />}
     </section>
   )
 }
