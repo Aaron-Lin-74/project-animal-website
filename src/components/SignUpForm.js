@@ -1,6 +1,4 @@
-/** Using react-bootstrap and bootstrap to style this form */
 import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 
 const SignUpForm = () => {
@@ -32,7 +30,7 @@ const SignUpForm = () => {
         showError('The error from the fetch')
         return
       }
-      navigate('/')
+      navigate('/dashboard')
     } catch {
       showError('Failed to create an account')
     } finally {
@@ -68,36 +66,49 @@ const SignUpForm = () => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className='text-center mb-4'>Sign Up</h2>
-          {error && <Alert variant='danger'>{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id='userName'>
-              <Form.Label>User Name</Form.Label>
-              <Form.Control ref={userNameRef} required />
-            </Form.Group>
-            <Form.Group id='email'>
-              <Form.Label>Email</Form.Label>
-              <Form.Control type='email' ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id='password'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type='password' ref={passwordRef} required />
-            </Form.Group>
-            <Form.Group id='password-confirm'>
-              <Form.Label>Password Confirmation</Form.Label>
-              <Form.Control type='password' ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Button disabled={loading} className='w-100 mt-4' type='submit'>
-              Sign Up
-            </Button>
-          </Form>
-          <div className='w-100 text-center mt-2'>
-            Already have an account? <Link to='/login'>Log In</Link>
-          </div>
-        </Card.Body>
-      </Card>
+      {error && <div className='sign-up-error'>{error}</div>}
+      <form className='sign-up-form' onSubmit={handleSubmit}>
+        <h3>Sign Up</h3>
+        <label htmlFor='sign-up-username'>User Name</label>
+        <input
+          id='sign-up-username'
+          type='text'
+          ref={userNameRef}
+          placeholder='user name'
+          required
+        />
+
+        <label htmlFor='sign-up-email'>Email</label>
+        <input
+          id='sign-up-email'
+          type='email'
+          ref={emailRef}
+          placeholder='example@example.com'
+          required
+        />
+        <label htmlFor='sign-up-password'>Password</label>
+        <input
+          id='sign-up-password'
+          type='password'
+          ref={passwordRef}
+          placeholder='password'
+          required
+        />
+        <label htmlFor='sign-up-password2'>Password Confirmation</label>
+        <input
+          id='sign-up-password2'
+          type='password'
+          placeholder='password'
+          ref={passwordConfirmRef}
+          required
+        />
+        <button disabled={loading} type='submit'>
+          Sign Up
+        </button>
+        <div className='switch'>
+          Already have an account? <Link to='/login'>Log In</Link>
+        </div>
+      </form>
     </>
   )
 }

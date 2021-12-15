@@ -1,6 +1,4 @@
-/** Using react-bootstrap and bootstrap to style this form */
 import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
@@ -25,10 +23,10 @@ const LoginForm = () => {
       const result = await login(user)
       console.log(result)
       if (!result) {
-        showError('The error from the fetch')
+        showError('Failed to login to account')
         return
       }
-      navigate('/')
+      navigate('/dashboard')
     } catch {
       showError('Failed to login to account')
     } finally {
@@ -64,28 +62,35 @@ const LoginForm = () => {
 
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className='text-center mb-4'>Log In</h2>
-          {error && <Alert variant='danger'>{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id='email'>
-              <Form.Label>Email</Form.Label>
-              <Form.Control type='email' ref={emailRef} required />
-            </Form.Group>
-            <Form.Group id='password'>
-              <Form.Label>Password</Form.Label>
-              <Form.Control type='password' ref={passwordRef} required />
-            </Form.Group>
-            <Button disabled={loading} className='w-100 mt-4' type='submit'>
-              Log In
-            </Button>
-          </Form>
-          <div className='w-100 text-center mt-2'>
-            Need to create an account? <Link to='/sign-up'>Sign Up</Link>
-          </div>
-        </Card.Body>
-      </Card>
+      {error && <div className='login-error'>{error}</div>}
+
+      <form className='login-form' onSubmit={handleSubmit}>
+        <h3>Log In</h3>
+        <label htmlFor='login-email'>Email</label>
+        <input
+          id='login-email'
+          type='email'
+          placeholder='example@example.com'
+          ref={emailRef}
+          required
+        />
+
+        <label htmlFor='login-password'>Password</label>
+        <input
+          id='login-password'
+          type='password'
+          placeholder='password'
+          ref={passwordRef}
+          required
+        />
+
+        <button disabled={loading} type='submit'>
+          Log In
+        </button>
+        <div className='switch'>
+          Need to create an account? <Link to='/sign-up'>Sign Up</Link>
+        </div>
+      </form>
     </>
   )
 }
