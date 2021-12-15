@@ -9,12 +9,17 @@ const HomeProvider = ({ children }) => {
   const openModal = (ind) => {
     setIndex(ind)
     setIsModalOpen(true)
-    document.body.style.position = 'fixed'
+    /**  When Modal opened, we don't want the underline page scroll. With body position to fixed, the issue is page will scroll top
+    // document.body.style.position = 'fixed'
+    // document.body.style.overflow = 'hidden' */
+    document.body.style.setProperty('overflow', 'hidden', 'important')
     document.getElementById('hero-video').pause()
   }
   const closeModal = () => {
     setIsModalOpen(false)
-    document.body.style.position = ''
+    // document.body.style.position = ''
+    document.body.style.overflow = 'visible'
+    // document.body.style.setProperty('overflow', 'visible', 'important')
     document.getElementById('hero-video').play()
   }
   return (
