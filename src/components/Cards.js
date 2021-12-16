@@ -5,7 +5,7 @@ import './Cards.css'
 const Cards = () => {
   return (
     <section className='cards'>
-      <h1> Explore different types of animals </h1>
+      <h2> Explore different types of animals </h2>
       <div className='cards-container'>
         <div className='cards-wrapper'>
           <ul className='card-items-l'>

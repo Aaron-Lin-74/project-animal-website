@@ -2,6 +2,11 @@
 .gallery {
   background: #fff;
 }
+.gallery h2 {
+  text-align: center;
+  padding: 20px;
+  font-size: 3rem;
+}
 .gallery-wrapper {
   line-height: 1.5rem;
   padding: 0;

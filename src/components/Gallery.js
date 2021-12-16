@@ -11,9 +11,7 @@ const Gallery = () => {
     <section className='gallery'>
       <div className='ani-info'>
         <div className='ani-text'>
-          <h2>Animal</h2>
-          <h3></h3>
-          <p></p>
+          <h2>Animals share the world around us </h2>
         </div>
       </div>
       <div className='gallery-wrapper'>

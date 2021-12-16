@@ -50,7 +50,7 @@ const Reviews = () => {
 
   return (
     <section className='reviews'>
-      <h1 className='rev-title'>/ Reviews</h1>
+      <h2 className='rev-title'>/ Reviews</h2>
       <div className='reviews-center'>
         {isLoaded &&
           reviews.map((review, ind) => {

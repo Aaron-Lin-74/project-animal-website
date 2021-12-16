@@ -3,8 +3,10 @@
   background: #fff;
 }
 
-h1 {
+.cards h2 {
   text-align: center;
+  padding: 20px;
+  font-size: 3rem;
 }
 
 .cards-container {
