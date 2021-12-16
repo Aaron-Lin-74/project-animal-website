@@ -65,12 +65,14 @@ figure.next-image {
 
 .modal-btns button {
   padding: 0 10px;
-  font-size: 17px;
+  font-size: 1.5rem;
   border-radius: 5px;
   background: rgba(238, 235, 235, 0.2);
   color: white;
   border: none;
   box-shadow: 0 5px 15px rgba(238, 235, 235, 0.2);
+  display: flex;
+  place-items: center;
 }
 @media (max-width: 1080px) {
   .gal-modal-img {

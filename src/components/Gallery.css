@@ -31,6 +31,8 @@
   object-position: top;
   object-fit: cover;
   height: 20vh;
+  /* remove the extra space at the bottom */
+  display: block;
 }
 
 .gallery-flex > div:hover .gal-img {
