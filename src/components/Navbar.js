@@ -20,7 +20,6 @@ function Navbar() {
   const displaySubmenu = (e) => {
     const page = e.target.textContent
     const tempRect = e.target.getBoundingClientRect()
-    console.log(e.target.getBoundingClientRect())
     const coorX = (tempRect.left + tempRect.right) / 2
     const coorY = tempRect.bottom
     openSubmenu(page, { coorX, coorY })

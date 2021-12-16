@@ -17,7 +17,6 @@ export const AppProvider = ({ children }) => {
   const [location, setLocation] = useState({})
 
   const openSubmenu = (page, coordinate) => {
-    console.log(coordinate)
     setLocation(coordinate)
     setIsSubmenuOpen(true)
   }
