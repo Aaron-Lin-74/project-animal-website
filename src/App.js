@@ -7,18 +7,26 @@ import Services from './components/Pages/Services'
 import Products from './components/Pages/Products'
 import SignUp from './components/Pages/SignUp'
 import Login from './components/Pages/Login'
+import Submenu from './components/Submenu'
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
+        <Submenu />
         <Routes>
           <Route path='/' element={<Home />}></Route>
           <Route path='/services' element={<Services />}></Route>
           <Route path='/products' element={<Products />}></Route>
           <Route path='/sign-up' element={<SignUp />}></Route>
           <Route path='/login' element={<Login />}></Route>
+          <Route path='/animals/mammals' element={<Login />}></Route>
+          <Route path='/animals/birds' element={<Login />}></Route>
+          <Route path='/animals/reptiles' element={<Login />}></Route>
+          <Route path='/animals/fish' element={<Login />}></Route>
+          <Route path='/animals/amphibians' element={<Login />}></Route>
+          <Route path='/animals/invertebrates' element={<Login />}></Route>
         </Routes>
         <Footer />
       </Router>
