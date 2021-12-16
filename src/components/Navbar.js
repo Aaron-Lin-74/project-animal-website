@@ -1,43 +1,62 @@
 import React, { useState, useEffect } from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import Button from './Button'
+import Submenu from './Submenu'
 import { FaTimes, FaBars } from 'react-icons/fa'
 import { GiTigerHead } from 'react-icons/gi'
+import { useGlobalContext } from './contexts/AppContext'
 
 function Navbar() {
-  // use click state to control the appearance of menu and button
-  const [click, setClick] = useState(false)
-  const [button, setButton] = useState(true)
+  const {
+    openSubmenu,
+    closeSubmenu,
+    toggleSubmenu,
+    isSidebarClicked,
+    toggleSidebar,
+    closeMobileMenu,
+  } = useGlobalContext()
 
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false)
-    } else {
-      setButton(true)
+  // Show the submenu when mouse over the animals menu, get the coordinate of animals
+  const displaySubmenu = (e) => {
+    const page = e.target.textContent
+    const tempRect = e.target.getBoundingClientRect()
+    console.log(e.target.getBoundingClientRect())
+    const coorX = (tempRect.left + tempRect.right) / 2
+    const coorY = tempRect.bottom
+    openSubmenu(page, { coorX, coorY })
+  }
+
+  // Once the mouse is moved other places of nav bar, close submenu
+  const handleSubmenu = (e) => {
+    if (!e.target.classList.contains('nav-links')) {
+      closeSubmenu()
     }
   }
-  useEffect(() => {
-    showButton()
-  }, [])
-  window.addEventListener('resize', showButton)
 
   return (
-    <nav className='navbar'>
+    <nav className='navbar' onMouseOver={handleSubmenu}>
       <div className='navbar-container'>
         <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
           Learn Animals <GiTigerHead />
         </Link>
-        <div className='menu-icon' onClick={handleClick}>
-          {click ? <FaTimes /> : <FaBars />}
+        <div className='menu-icon' onClick={toggleSidebar}>
+          {isSidebarClicked ? <FaTimes /> : <FaBars />}
         </div>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <ul className={isSidebarClicked ? 'nav-menu active' : 'nav-menu'}>
           <li className='nav-item'>
             <Link to='/' className='nav-links' onClick={closeMobileMenu}>
               Home
             </Link>
+          </li>
+          <li className='nav-item'>
+            <a
+              className='nav-links'
+              onClick={closeMobileMenu}
+              onClick={toggleSubmenu}
+              onMouseOver={displaySubmenu}
+            >
+              Animals
+            </a>
           </li>
           <li className='nav-item'>
             <Link
@@ -48,30 +67,16 @@ function Navbar() {
               Services
             </Link>
           </li>
-          <li className='nav-item'>
-            <Link
-              to='/products'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Products
-            </Link>
-          </li>
           <li>
             <Link
               to='/sign-up'
-              className='nav-links-mobile'
+              className='nav-links-sign-up'
               onClick={closeMobileMenu}
             >
               Sign Up
             </Link>
           </li>
         </ul>
-        {button && (
-          <Button buttonStyle='btn--outline' path='/sign-up'>
-            Sign Up
-          </Button>
-        )}
       </div>
     </nav>
   )
