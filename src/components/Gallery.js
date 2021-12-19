@@ -18,7 +18,11 @@ const Gallery = () => {
         <div className='gallery-flex'>
           {images.map((image, ind) => {
             return (
-              <div className='gal-flex-item' onClick={() => openModal(ind)}>
+              <div
+                key={ind}
+                className='gal-flex-item'
+                onClick={() => openModal(ind)}
+              >
                 <a>
                   <img className='gal-img' src={`/images/${image}.jpg`}></img>
                   <span className='gal-add'>
