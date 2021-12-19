@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useContext } from 'react'
+import axios from 'axios'
 
 const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
   const serverUrl = 'http://localhost:5000'
+
+  // The animals data fetched from the server
+  const [animals, setAnimals] = useState([])
+
   // Small large screen break point is 960px
   const screenBreakPoint = 960
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
@@ -17,6 +22,17 @@ export const AppProvider = ({ children }) => {
   // location is an object that has the coordinate (x, y) properties
   const [location, setLocation] = useState({})
 
+  const loadAnimals = async (limit) => {
+    try {
+      // Use query string to set the type and limit
+      const response = await axios.get(
+        `${serverUrl}/animals?type=Mammal&limit=${limit}`
+      )
+      setAnimals(response.data)
+    } catch (err) {
+      console.log(err)
+    }
+  }
   const openSubmenu = (page, coordinate) => {
     setLocation(coordinate)
     setIsSubmenuOpen(true)
@@ -52,6 +68,8 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         serverUrl,
+        animals,
+        loadAnimals,
         isSubmenuOpen,
         openSubmenu,
         closeSubmenu,
