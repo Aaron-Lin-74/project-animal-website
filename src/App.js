@@ -14,6 +14,7 @@ import Reptiles from './components/Pages/Animals/Reptiles'
 import Fish from './components/Pages/Animals/Fish'
 import Amphibians from './components/Pages/Animals/Amphibians'
 import Invertebrates from './components/Pages/Animals/Invertebrates'
+import Error from './components/Pages/Error'
 
 function App() {
   return (
@@ -36,7 +37,9 @@ function App() {
             path='/animals/invertebrates'
             element={<Invertebrates />}
           ></Route>
+          <Route path='*' element={<Error />}></Route>
         </Routes>
+
         <Footer />
       </Router>
     </>
