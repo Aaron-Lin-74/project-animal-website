@@ -8,6 +8,12 @@ import Products from './components/Pages/Products'
 import SignUp from './components/Pages/SignUp'
 import Login from './components/Pages/Login'
 import Submenu from './components/Submenu'
+import Mammals from './components/Pages/Animals/Mammals'
+import Birds from './components/Pages/Animals/Birds'
+import Reptiles from './components/Pages/Animals/Reptiles'
+import Fish from './components/Pages/Animals/Fish'
+import Amphibians from './components/Pages/Animals/Amphibians'
+import Invertebrates from './components/Pages/Animals/Invertebrates'
 
 function App() {
   return (
@@ -21,12 +27,15 @@ function App() {
           <Route path='/products' element={<Products />}></Route>
           <Route path='/sign-up' element={<SignUp />}></Route>
           <Route path='/login' element={<Login />}></Route>
-          <Route path='/animals/mammals' element={<Login />}></Route>
-          <Route path='/animals/birds' element={<Login />}></Route>
-          <Route path='/animals/reptiles' element={<Login />}></Route>
-          <Route path='/animals/fish' element={<Login />}></Route>
-          <Route path='/animals/amphibians' element={<Login />}></Route>
-          <Route path='/animals/invertebrates' element={<Login />}></Route>
+          <Route path='/animals/mammals' element={<Mammals />}></Route>
+          <Route path='/animals/birds' element={<Birds />}></Route>
+          <Route path='/animals/reptiles' element={<Reptiles />}></Route>
+          <Route path='/animals/fish' element={<Fish />}></Route>
+          <Route path='/animals/amphibians' element={<Amphibians />}></Route>
+          <Route
+            path='/animals/invertebrates'
+            element={<Invertebrates />}
+          ></Route>
         </Routes>
         <Footer />
       </Router>
