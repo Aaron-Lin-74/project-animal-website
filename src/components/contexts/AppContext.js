@@ -3,6 +3,7 @@ import React, { useState, useEffect, useContext } from 'react'
 const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
+  const serverUrl = 'http://localhost:5000'
   // Small large screen break point is 960px
   const screenBreakPoint = 960
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
@@ -42,15 +43,15 @@ export const AppProvider = ({ children }) => {
     closeSubmenu()
   }
   useEffect(() => {
-    checkScreenSize()
+    // Check the small large screen break point
+    window.addEventListener('resize', checkScreenSize)
+    return () => window.removeEventListener('resize', checkScreenSize)
   }, [])
-
-  // Check the small large screen break point
-  window.addEventListener('resize', checkScreenSize)
 
   return (
     <AppContext.Provider
       value={{
+        serverUrl,
         isSubmenuOpen,
         openSubmenu,
         closeSubmenu,
