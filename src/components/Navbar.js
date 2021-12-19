@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
-import Submenu from './Submenu'
 import { FaTimes, FaBars } from 'react-icons/fa'
 import { GiTigerHead } from 'react-icons/gi'
 import { useGlobalContext } from './contexts/AppContext'
