@@ -88,7 +88,7 @@ article h4 {
 }
 
 /* By default the article is transparent */
-article {
+.reviews article {
   position: absolute;
   top: 0;
   left: 0;
