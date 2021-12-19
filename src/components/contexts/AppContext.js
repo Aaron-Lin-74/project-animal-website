@@ -22,11 +22,11 @@ export const AppProvider = ({ children }) => {
   // location is an object that has the coordinate (x, y) properties
   const [location, setLocation] = useState({})
 
-  const loadAnimals = async (limit) => {
+  const loadAnimals = async (type, limit) => {
     try {
       // Use query string to set the type and limit
       const response = await axios.get(
-        `${serverUrl}/animals?type=Mammal&limit=${limit}`
+        `${serverUrl}/animals?type=${type}&limit=${limit}`
       )
       setAnimals(response.data)
     } catch (err) {

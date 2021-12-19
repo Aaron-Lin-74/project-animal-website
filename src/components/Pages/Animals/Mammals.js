@@ -9,12 +9,13 @@ const Mammals = () => {
   const [limit, setLimit] = useState(3)
 
   // The url of the backend server, defined in the AppContext
-  const { serverUrl, animals, loadAnimals } = useGlobalContext()
+  const { animals, loadAnimals } = useGlobalContext()
   const loadMoreRef = useRef(null)
   const scrollTopRef = useRef(null)
 
+  // Specify the type of the animal and number of animals to fetch
   useEffect(() => {
-    loadAnimals(limit)
+    loadAnimals('Mammal', limit)
   }, [limit])
 
   // Add onscroll event listener determining to show the button or not
