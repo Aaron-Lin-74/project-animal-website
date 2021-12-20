@@ -34,27 +34,27 @@ const Submenu = () => {
           largeScreenMode ? 'submenu-center col-3' : 'submenu-center'
         }`}
       >
-        <Link to='/animals/mammals' onClick={closeMobileMenu}>
+        <Link to='/animals/Mammal' onClick={closeMobileMenu}>
           <h4>Mammals</h4>
         </Link>
 
-        <Link to='/animals/birds' onClick={closeMobileMenu}>
+        <Link to='/animals/Bird' onClick={closeMobileMenu}>
           <h4>Birds</h4>
         </Link>
 
-        <Link to='/animals/reptiles' onClick={closeMobileMenu}>
+        <Link to='/animals/Reptile' onClick={closeMobileMenu}>
           <h4>Reptiles</h4>
         </Link>
 
-        <Link to='/animals/fish' onClick={closeMobileMenu}>
+        <Link to='/animals/Fish' onClick={closeMobileMenu}>
           <h4>Fish</h4>
         </Link>
 
-        <Link to='/animals/amphibians' onClick={closeMobileMenu}>
+        <Link to='/animals/Amphibian' onClick={closeMobileMenu}>
           <h4>Amphibians </h4>
         </Link>
 
-        <Link to='/animals/invertebrates' onClick={closeMobileMenu}>
+        <Link to='/animals/Invertebrate' onClick={closeMobileMenu}>
           <h4>Invertebrates </h4>
         </Link>
       </div>
