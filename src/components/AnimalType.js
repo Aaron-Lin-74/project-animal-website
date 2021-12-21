@@ -1,17 +1,36 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { useGlobalContext } from './contexts/AppContext'
 import AnimalCard from './AnimalCard'
+import './AnimalType.css'
 
-const Animal = () => {
+const AnimalType = () => {
   const { animalType } = useParams()
+  const allTypes = [
+    'Mammal',
+    'Fish',
+    'Bird',
+    'Reptile',
+    'Amphibian',
+    'Invertebrate',
+  ]
+  let navigate = useNavigate()
 
+  // If user types the wrong route instead of using menu, navigate to 404
+  if (!allTypes.includes(animalType)) {
+    navigate('/error')
+  }
   // The number of record shown at first place
   const [limit, setLimit] = useState(3)
 
   // The url of the backend server, defined in the AppContext
-  const { animals, loadAnimals } = useGlobalContext()
+  const { animals, loadAnimals, scrollTop } = useGlobalContext()
   const loadMoreRef = useRef(null)
+
+  // Every time the animal type changes, scroll to the top
+  useEffect(() => {
+    scrollTop()
+  }, [animalType])
 
   // Specify the type of the animal and number of animals to fetch
   useEffect(() => {
@@ -38,4 +57,4 @@ const Animal = () => {
   )
 }
 
-export default Animal
+export default AnimalType

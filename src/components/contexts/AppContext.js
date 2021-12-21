@@ -19,6 +19,12 @@ export const AppProvider = ({ children }) => {
   // We set 960px to be the break point of large screen and small screen
   const [largeScreenMode, setLargeScreenMode] = useState(true)
 
+  // Scroll to the top of the page
+  const scrollTop = () => {
+    document.body.scrollTop = 0 // For Safari
+    document.documentElement.scrollTop = 0 // For Chrome, Firefox, IE and Opera
+  }
+
   // location is an object that has the coordinate (x, y) properties
   const [location, setLocation] = useState({})
 
@@ -26,7 +32,7 @@ export const AppProvider = ({ children }) => {
     try {
       // Use query string to set the type and limit
       const response = await axios.get(
-        `${serverUrl}/animals?type=${type}&limit=${limit}`
+        `${serverUrl}/api/animals?type=${type}&limit=${limit}`
       )
       setAnimals(response.data)
     } catch (err) {
@@ -43,6 +49,7 @@ export const AppProvider = ({ children }) => {
   const toggleSubmenu = () => {
     setIsSubmenuOpen(!isSubmenuOpen)
   }
+
   // The break point we set is 960px
   const checkScreenSize = () => {
     if (window.innerWidth <= screenBreakPoint) {
@@ -58,6 +65,7 @@ export const AppProvider = ({ children }) => {
     setIsSidebarClicked(false)
     closeSubmenu()
   }
+
   useEffect(() => {
     // Check the small large screen break point
     window.addEventListener('resize', checkScreenSize)
@@ -78,6 +86,7 @@ export const AppProvider = ({ children }) => {
         setLocation,
         largeScreenMode,
         setLargeScreenMode,
+        scrollTop,
         screenBreakPoint,
         isSidebarClicked,
         toggleSidebar,

@@ -10,7 +10,7 @@ import Login from './components/Pages/Login'
 import Submenu from './components/Submenu'
 import Error from './components/Pages/Error'
 import Animals from './components/Pages/Animals'
-import Animal from './components/Animal'
+import AnimalType from './components/AnimalType'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path='/sign-up' element={<SignUp />}></Route>
           <Route path='/login' element={<Login />}></Route>
           <Route path='/animals' element={<Animals />}>
-            <Route path=':animalType' element={<Animal />}></Route>
+            <Route path=':animalType' element={<AnimalType />}></Route>
           </Route>
           <Route path='*' element={<Error />}></Route>
         </Routes>
