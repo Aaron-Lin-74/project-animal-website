@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useGlobalContext } from './contexts/AppContext'
+import { useAuth } from './contexts/AuthContext'
 import AnimalCard from './AnimalCard'
 import './AnimalType.css'
 
@@ -14,18 +15,28 @@ const AnimalType = () => {
     'Amphibian',
     'Invertebrate',
   ]
-  let navigate = useNavigate()
+  const { currentUser } = useAuth()
+  const navigate = useNavigate()
+  const location = useLocation()
 
-  // If user types the wrong route instead of using menu, navigate to 404
-  if (!allTypes.includes(animalType)) {
-    navigate('/error')
-  }
   // The number of record shown at first place
   const [limit, setLimit] = useState(3)
 
   // The url of the backend server, defined in the AppContext
   const { animals, loadAnimals, scrollTop } = useGlobalContext()
   const loadMoreRef = useRef(null)
+
+  useEffect(() => {
+    // If user types the wrong route instead of using menu, navigate to 404
+    if (!allTypes.includes(animalType)) {
+      navigate('/error', { replace: true })
+    }
+
+    // Only Mammal and Bird are public, the rest types need log in
+    if (!currentUser && animalType !== 'Mammal' && animalType !== 'Bird') {
+      navigate('/login', { replace: true, path: location.pathname })
+    }
+  })
 
   // Every time the animal type changes, scroll to the top
   useEffect(() => {

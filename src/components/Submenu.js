@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './Submenu.css'
 import { useGlobalContext } from './contexts/AppContext'
+import { BsStarFill } from 'react-icons/bs'
 
 const Submenu = () => {
   const {
@@ -43,19 +44,29 @@ const Submenu = () => {
         </Link>
 
         <Link to='/animals/Reptile' onClick={closeMobileMenu}>
-          <h4>Reptiles</h4>
+          <h4>
+            Reptiles <BsStarFill />
+          </h4>
         </Link>
 
         <Link to='/animals/Fish' onClick={closeMobileMenu}>
-          <h4>Fish</h4>
+          <h4>
+            Fish
+            <BsStarFill />
+          </h4>
         </Link>
 
         <Link to='/animals/Amphibian' onClick={closeMobileMenu}>
-          <h4>Amphibians </h4>
+          <h4>
+            Amphibians
+            <BsStarFill />
+          </h4>
         </Link>
 
         <Link to='/animals/Invertebrate' onClick={closeMobileMenu}>
-          <h4>Invertebrates </h4>
+          <h4>
+            Invertebrates <BsStarFill />
+          </h4>
         </Link>
       </div>
     </aside>
