@@ -14,6 +14,7 @@ import Dashboard from './components/Pages/Dashboard'
 import AnimalType from './components/AnimalType'
 import { AuthProvider } from './components/contexts/AuthContext'
 import RequireAuth from './components/RequireAuth'
+import UpdateProfile from './components/UpdateProfile'
 
 function App() {
   return (
@@ -36,6 +37,14 @@ function App() {
               element={
                 <RequireAuth>
                   <Dashboard />
+                </RequireAuth>
+              }
+            ></Route>
+            <Route
+              path='/update-profile'
+              element={
+                <RequireAuth>
+                  <UpdateProfile />
                 </RequireAuth>
               }
             ></Route>
