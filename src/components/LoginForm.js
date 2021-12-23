@@ -17,7 +17,6 @@ const LoginForm = () => {
     try {
       setError('')
       setLoading(true)
-      // await signup(emailRef.current.value, passwordRef.current.value)
       const user = {
         email: emailRef.current.value,
         password: passwordRef.current.value,
@@ -30,7 +29,6 @@ const LoginForm = () => {
       navigate('/dashboard')
     } catch {
       showError('Failed to login to account')
-    } finally {
       setLoading(false)
     }
   }
