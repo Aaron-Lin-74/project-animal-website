@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from './contexts/AuthContext'
 
 const SignUpForm = () => {
   const userNameRef = useRef()
@@ -10,6 +11,7 @@ const SignUpForm = () => {
   // aviod multi clicks of the Sign Up button after first submission
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const { signUp } = useAuth()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -25,7 +27,7 @@ const SignUpForm = () => {
         email: emailRef.current.value,
         password: passwordRef.current.value,
       }
-      const result = await signup(user)
+      const result = await signUp(user)
       if (!result) {
         showError('The error from the fetch')
         return
@@ -38,26 +40,26 @@ const SignUpForm = () => {
     }
   }
 
-  async function signup(user) {
-    // create a new user, this is the test api url
-    try {
-      const response = await fetch('http://localhost:5000/users', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      })
-      if (!response.ok) {
-        throw new Error('Network response was not OK')
-      }
-      const data = await response.json()
-      return data
-    } catch (err) {
-      console.error(err)
-      return false
-    }
-  }
+  // async function signup(user) {
+  //   // create a new user, this is the test api url
+  //   try {
+  //     const response = await fetch('http://localhost:5000/users', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(user),
+  //     })
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not OK')
+  //     }
+  //     const data = await response.json()
+  //     return data
+  //   } catch (err) {
+  //     console.error(err)
+  //     return false
+  //   }
+  // }
 
   function showError(message) {
     setError(message)

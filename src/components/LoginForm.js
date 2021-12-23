@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { useAuth } from './contexts/AuthContext'
 
 const LoginForm = () => {
   const emailRef = useRef()
@@ -9,6 +10,7 @@ const LoginForm = () => {
   // aviod multi clicks of the Sign Up button after first submission
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
+  const { login } = useAuth()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -21,7 +23,6 @@ const LoginForm = () => {
         password: passwordRef.current.value,
       }
       const result = await login(user)
-      console.log(result)
       if (!result) {
         showError('Failed to login to account')
         return
@@ -34,26 +35,26 @@ const LoginForm = () => {
     }
   }
 
-  async function login(user) {
-    // create a new user, this is the test api url
-    try {
-      const response = await fetch('http://localhost:5000/users/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(user),
-      })
-      if (!response.ok) {
-        throw new Error('Network response was not OK')
-      }
-      const data = await response.json()
-      return data
-    } catch (err) {
-      console.error(err)
-      return false
-    }
-  }
+  // async function login(user) {
+  //   // create a new user, this is the test api url
+  //   try {
+  //     const response = await fetch('http://localhost:5000/api/auth', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify(user),
+  //     })
+  //     if (!response.ok) {
+  //       throw new Error('Network response was not OK')
+  //     }
+  //     const data = await response.json()
+  //     return data
+  //   } catch (err) {
+  //     console.error(err)
+  //     return false
+  //   }
+  // }
 
   function showError(message) {
     setError(message)

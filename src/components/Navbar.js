@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { FaTimes, FaBars } from 'react-icons/fa'
 import { GiTigerHead } from 'react-icons/gi'
 import { useGlobalContext } from './contexts/AppContext'
+import { useAuth } from './contexts/AuthContext'
 
 function Navbar() {
   const {
@@ -14,6 +15,7 @@ function Navbar() {
     toggleSidebar,
     closeMobileMenu,
   } = useGlobalContext()
+  const { currentUser, logout } = useAuth()
 
   // Show the submenu when mouse over the animals menu, get the coordinate of animals
   const displaySubmenu = (e) => {
@@ -65,15 +67,34 @@ function Navbar() {
               Services
             </Link>
           </li>
-          <li>
-            <Link
-              to='/sign-up'
-              className='nav-links-sign-up'
-              onClick={closeMobileMenu}
-            >
-              Sign Up
-            </Link>
-          </li>
+          {currentUser && (
+            <li>
+              <Link
+                to='/dashboard'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                {currentUser.name}
+              </Link>
+            </li>
+          )}
+          {currentUser ? (
+            <li>
+              <a className='nav-links-sign-up' onClick={logout}>
+                Log out
+              </a>
+            </li>
+          ) : (
+            <li>
+              <Link
+                to='/sign-up'
+                className='nav-links-sign-up'
+                onClick={closeMobileMenu}
+              >
+                Sign Up
+              </Link>
+            </li>
+          )}
         </ul>
       </div>
     </nav>
