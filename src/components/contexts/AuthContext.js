@@ -63,8 +63,31 @@ export function AuthProvider({ children }) {
     navigate('/', { replace: true })
   }
 
+  async function updateUserProfile(user) {
+    try {
+      const response = await fetch(`${serverUrl}/api/users`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+        body: JSON.stringify({ ...user }),
+      })
+      if (!response.ok) {
+        throw new Error('Network response was not OK')
+      }
+      const data = await response.json()
+      setCurrentUser(data.user)
+      return data.message
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
-    <AuthContext.Provider value={{ currentUser, signUp, login, logout }}>
+    <AuthContext.Provider
+      value={{ currentUser, signUp, login, logout, updateUserProfile }}
+    >
       {children}
     </AuthContext.Provider>
   )
