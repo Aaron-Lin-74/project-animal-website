@@ -50,6 +50,7 @@
   text-transform: capitalize;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 .submenu-center svg {
   color: var(--clr-grey-5);
