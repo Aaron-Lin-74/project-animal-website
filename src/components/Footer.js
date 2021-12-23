@@ -31,16 +31,16 @@ const Footer = () => {
       </section>
       <section className='footer-links'>
         <div className='footer-nav-items'>
-          <Link className='footer-btn' to='/'>
+          <Link className='footer-btn' to='/contact'>
             Contact
           </Link>
           <Link className='footer-btn' to='/about'>
             About Us
           </Link>
-          <Link className='footer-btn' to='/'>
+          <Link className='footer-btn' to='/faq'>
             FAQ
           </Link>
-          <Link className='footer-btn' to='/'>
+          <Link className='footer-btn' to='/terms'>
             Terms of Use
           </Link>
         </div>
