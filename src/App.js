@@ -10,27 +10,40 @@ import Login from './components/Pages/Login'
 import Submenu from './components/Submenu'
 import Error from './components/Pages/Error'
 import Animals from './components/Pages/Animals'
+import Dashboard from './components/Pages/Dashboard'
 import AnimalType from './components/AnimalType'
+import { AuthProvider } from './components/contexts/AuthContext'
+import RequireAuth from './components/RequireAuth'
 
 function App() {
   return (
     <>
       <Router>
-        <Navbar />
-        <Submenu />
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/services' element={<Services />}></Route>
-          <Route path='/products' element={<Products />}></Route>
-          <Route path='/sign-up' element={<SignUp />}></Route>
-          <Route path='/login' element={<Login />}></Route>
-          <Route path='/animals' element={<Animals />}>
-            <Route path=':animalType' element={<AnimalType />}></Route>
-          </Route>
-          <Route path='*' element={<Error />}></Route>
-        </Routes>
+        <AuthProvider>
+          <Navbar />
+          <Submenu />
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/services' element={<Services />}></Route>
+            <Route path='/products' element={<Products />}></Route>
+            <Route path='/sign-up' element={<SignUp />}></Route>
+            <Route path='/login' element={<Login />}></Route>
+            <Route path='/animals' element={<Animals />}>
+              <Route path=':animalType' element={<AnimalType />}></Route>
+            </Route>
+            <Route
+              path='/dashboard'
+              element={
+                <RequireAuth>
+                  <Dashboard />
+                </RequireAuth>
+              }
+            ></Route>
+            <Route path='*' element={<Error />}></Route>
+          </Routes>
 
-        <Footer />
+          <Footer />
+        </AuthProvider>
       </Router>
     </>
   )
