@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useGlobalContext } from './contexts/AppContext'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { FaQuoteRight } from 'react-icons/fa'
 import './Reviews.css'
@@ -7,11 +8,12 @@ const Reviews = () => {
   const [reviews, setReviews] = useState(null)
   const [index, setIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
+  const { serverUrl } = useGlobalContext()
 
   // Fetch the reviews from the server
   const fetchReivews = async () => {
     try {
-      const response = await fetch('http://localhost:5000/reviews')
+      const response = await fetch(`${serverUrl}/api/reviews`)
       if (!response.ok) {
         throw new Error('Network response was not OK')
       }
