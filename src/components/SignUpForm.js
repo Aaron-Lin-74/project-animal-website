@@ -40,27 +40,6 @@ const SignUpForm = () => {
     }
   }
 
-  // async function signup(user) {
-  //   // create a new user, this is the test api url
-  //   try {
-  //     const response = await fetch('http://localhost:5000/users', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify(user),
-  //     })
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not OK')
-  //     }
-  //     const data = await response.json()
-  //     return data
-  //   } catch (err) {
-  //     console.error(err)
-  //     return false
-  //   }
-  // }
-
   function showError(message) {
     setError(message)
     setTimeout(() => setError(''), 5000)
