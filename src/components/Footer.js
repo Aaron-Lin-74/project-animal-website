@@ -34,13 +34,13 @@ const Footer = () => {
           <Link className='footer-btn' to='/contact'>
             Contact
           </Link>
-          <Link className='footer-btn' to='/about'>
+          <Link className='footer-btn' to='/about-us'>
             About Us
           </Link>
           <Link className='footer-btn' to='/faq'>
             FAQ
           </Link>
-          <Link className='footer-btn' to='/terms'>
+          <Link className='footer-btn' to='/terms-of-use'>
             Terms of Use
           </Link>
         </div>

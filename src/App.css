@@ -27,14 +27,22 @@ body {
 .sign-up,
 .dashboard,
 .update-profile,
-.error {
+.error,
+.contact,
+.about-us,
+.faq,
+.terms-of-use {
   display: flex;
   height: 90vh;
   align-items: center;
   justify-content: center;
 }
 
-.services {
+.services,
+.contact,
+.faq,
+.about-us,
+.terms-of-use {
   background-image: url(./backgroundImages/forest.jpg);
   background-position: center;
   background-size: cover;

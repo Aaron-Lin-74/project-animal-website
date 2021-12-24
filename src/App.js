@@ -15,6 +15,10 @@ import AnimalType from './components/AnimalType'
 import { AuthProvider } from './components/contexts/AuthContext'
 import RequireAuth from './components/RequireAuth'
 import UpdateProfile from './components/Pages/UpdateProfile'
+import Contact from './components/Pages/Contact'
+import AboutUs from './components/Pages/AboutUs'
+import FAQ from './components/Pages/FAQ'
+import TermsOfUse from './components/Pages/TermsOfUse'
 
 function App() {
   return (
@@ -48,6 +52,10 @@ function App() {
                 </RequireAuth>
               }
             ></Route>
+            <Route path='/contact' element={<Contact />}></Route>
+            <Route path='/about-us' element={<AboutUs />}></Route>
+            <Route path='/faq' element={<FAQ />}></Route>
+            <Route path='/terms-of-use' element={<TermsOfUse />}></Route>
             <Route path='*' element={<Error />}></Route>
           </Routes>
 
