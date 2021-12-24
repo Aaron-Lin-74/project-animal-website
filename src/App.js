@@ -14,7 +14,7 @@ import Dashboard from './components/Pages/Dashboard'
 import AnimalType from './components/AnimalType'
 import { AuthProvider } from './components/contexts/AuthContext'
 import RequireAuth from './components/RequireAuth'
-import UpdateProfile from './components/UpdateProfile'
+import UpdateProfile from './components/Pages/UpdateProfile'
 
 function App() {
   return (

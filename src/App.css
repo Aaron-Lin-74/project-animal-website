@@ -25,6 +25,8 @@ body {
 .products,
 .login,
 .sign-up,
+.dashboard,
+.update-profile,
 .error {
   display: flex;
   height: 90vh;
@@ -54,6 +56,15 @@ body {
 .sign-up {
   background-image: linear-gradient(rgba(92, 93, 96, 24%), rgba(0, 0, 0, 100%)),
     url(./backgroundImages/signUp.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--mainFontColor);
+}
+
+.update-profile {
+  background-image: linear-gradient(rgba(92, 93, 96, 24%), rgba(0, 0, 0, 100%)),
+    url(./backgroundImages/africa.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
