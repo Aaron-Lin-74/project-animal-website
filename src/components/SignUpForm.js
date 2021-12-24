@@ -35,7 +35,6 @@ const SignUpForm = () => {
       navigate('/dashboard')
     } catch {
       showError('Failed to create an account')
-    } finally {
       setLoading(false)
     }
   }
