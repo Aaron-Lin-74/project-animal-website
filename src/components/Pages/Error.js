@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useGlobalContext } from '../contexts/AppContext'
 import Button from '../Button'
 
 const Error = () => {
+  const { scrollTop } = useGlobalContext()
+  useEffect(() => {
+    scrollTop()
+  }, [])
   return (
     <div className='error'>
       <h1>404</h1>

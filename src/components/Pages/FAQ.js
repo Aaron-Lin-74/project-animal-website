@@ -1,20 +1,16 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../contexts/AppContext'
-import LoginForm from '../LoginForm'
-import '../LoginSignUpForm.css'
 
-const Login = () => {
+const FAQ = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
   }, [])
   return (
-    <div className='login'>
-      <div className='login-flex'>
-        <LoginForm />
-      </div>
+    <div className='faq'>
+      <h1>FAQ</h1>
     </div>
   )
 }
 
-export default Login
+export default FAQ
