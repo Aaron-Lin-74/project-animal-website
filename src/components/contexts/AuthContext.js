@@ -84,9 +84,36 @@ export function AuthProvider({ children }) {
     }
   }
 
+  async function deleteUser() {
+    try {
+      const response = await fetch(`${serverUrl}/api/users`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
+        },
+      })
+      if (!response.ok) {
+        throw new Error('Network response was not Ok')
+      }
+      // const result = await response.json()
+      setCurrentUser(null)
+      localStorage.removeItem('accessToken')
+      navigate('/', { replace: true })
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <AuthContext.Provider
-      value={{ currentUser, signUp, login, logout, updateUserProfile }}
+      value={{
+        currentUser,
+        signUp,
+        login,
+        logout,
+        updateUserProfile,
+        deleteUser,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -1,15 +1,30 @@
 import React from 'react'
 import { useAuth } from './contexts/AuthContext'
 import { Link } from 'react-router-dom'
+import './Profile.css'
+import Button from './Button'
 
 const Profile = () => {
-  const { currentUser } = useAuth()
+  const { currentUser, deleteUser } = useAuth()
+
+  const handleDeleteUser = () => {
+    if (
+      window.confirm(
+        `Deleting your account is permanent and will remove all content and profile settings. Are you sure you want to delete your account?`
+      ) === true
+    ) {
+      deleteUser()
+    }
+  }
   return (
-    <div>
+    <div className='profile'>
       <h1>Profile</h1>
-      <h2>{currentUser.name}</h2>
-      <h2>{currentUser.email}</h2>
-      <Link to='/update-profile'>Update Profile</Link>
+      <h2>User Name: {currentUser.name}</h2>
+      <h2>Email: {currentUser.email}</h2>
+      <Button path='/update-profile'>Update Profile</Button>
+      <Button onClick={handleDeleteUser} buttonStyle='btn--danger'>
+        Delete Account
+      </Button>
     </div>
   )
 }
