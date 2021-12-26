@@ -1,6 +1,5 @@
-# Getting Started with Create React App
+# This is a front end React App created for kids to learn more about animals.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
