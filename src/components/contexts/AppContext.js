@@ -4,7 +4,7 @@ import axios from 'axios'
 const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
-  const serverUrl = 'http://localhost:5000'
+  const serverUrl = process.env.REACT_APP_SERVER_URL
 
   // The animals data fetched from the server
   const [animals, setAnimals] = useState([])
@@ -32,7 +32,7 @@ export const AppProvider = ({ children }) => {
     try {
       // Use query string to set the type and limit
       const response = await axios.get(
-        `${serverUrl}/api/animals?type=${type}&limit=${limit}`
+        `${serverUrl}/api/animals/${type}?limit=${limit}`
       )
       setAnimals(response.data)
     } catch (err) {

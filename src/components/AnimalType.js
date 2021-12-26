@@ -8,12 +8,12 @@ import './AnimalType.css'
 const AnimalType = () => {
   const { animalType } = useParams()
   const allTypes = [
-    'Mammal',
-    'Fish',
-    'Bird',
-    'Reptile',
-    'Amphibian',
-    'Invertebrate',
+    'mammal',
+    'fish',
+    'bird',
+    'reptile',
+    'amphibian',
+    'invertebrate',
   ]
   const { currentUser } = useAuth()
   const navigate = useNavigate()
@@ -33,7 +33,7 @@ const AnimalType = () => {
     }
 
     // Only Mammal and Bird are public, the rest types need log in
-    if (!currentUser && animalType !== 'Mammal' && animalType !== 'Bird') {
+    if (!currentUser && animalType !== 'mammal' && animalType !== 'bird') {
       navigate('/login', { replace: true, path: location.pathname })
     }
   })
