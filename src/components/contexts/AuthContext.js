@@ -60,7 +60,7 @@ export function AuthProvider({ children }) {
     localStorage.removeItem('accessToken')
 
     // Replace the current location instead of push a new one onto the history stack
-    navigate('/', { replace: true })
+    navigate('/login', { replace: true })
   }
 
   async function updateUserProfile(user) {
@@ -74,7 +74,8 @@ export function AuthProvider({ children }) {
         body: JSON.stringify({ ...user }),
       })
       if (!response.ok) {
-        throw new Error('Network response was not OK')
+        // throw new Error('Network response was not OK')
+        return response.status
       }
       const data = await response.json()
       setCurrentUser(data.user)
