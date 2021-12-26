@@ -4,7 +4,7 @@ import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa'
 import './HeroSection.css'
 
 const HeroSection = () => {
-  const videoRef = useRef(null)
+  const videoRef = useRef()
   const [isPlay, setIsPlay] = useState(true)
 
   // toggle the play or pause of the hero video

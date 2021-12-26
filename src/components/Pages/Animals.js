@@ -4,7 +4,7 @@ import { ImArrowUp } from 'react-icons/im'
 import { useGlobalContext } from '../contexts/AppContext'
 
 const Animals = () => {
-  const scrollTopRef = useRef(null)
+  const scrollTopRef = useRef()
 
   const { scrollTop } = useGlobalContext()
 
@@ -23,7 +23,7 @@ const Animals = () => {
       document.body.scrollTop > 20 ||
       document.documentElement.scrollTop > 20
     ) {
-      if (scrollTopRef.current) scrollTopRef.current.style.display = 'block'
+      scrollTopRef.current.style.display = 'block'
     } else {
       scrollTopRef.current.style.display = 'none'
     }

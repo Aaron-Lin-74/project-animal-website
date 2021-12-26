@@ -12,7 +12,7 @@ const Submenu = () => {
     largeScreenMode,
     closeMobileMenu,
   } = useGlobalContext()
-  const submenuRef = useRef(null)
+  const submenuRef = useRef()
 
   useEffect(() => {
     if (largeScreenMode) {

@@ -24,7 +24,7 @@ const AnimalType = () => {
 
   // The url of the backend server, defined in the AppContext
   const { animals, loadAnimals, scrollTop } = useGlobalContext()
-  const loadMoreRef = useRef(null)
+  const loadMoreRef = useRef()
 
   useEffect(() => {
     // If user types the wrong route instead of using menu, navigate to 404
