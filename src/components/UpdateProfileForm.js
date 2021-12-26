@@ -13,7 +13,7 @@ const UpdateProfileForm = () => {
   // aviod multi clicks of the Sign Up button after first submission
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
-  const { currentUser, updateUserProfile } = useAuth()
+  const { currentUser, updateUserProfile, logout } = useAuth()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -45,9 +45,15 @@ const UpdateProfileForm = () => {
       }
       // const result = await Promise.all(promises)
       const result = await updateUserProfile(updatedUser)
-      console.log(result)
       if (!result) {
         showError('Failed to update the profile')
+        return
+      }
+
+      // The access token is not valid, re-login
+      if (result === 403) {
+        showError('Session expires, please login again')
+        setTimeout(logout, 3000)
         return
       }
       navigate('/dashboard')
