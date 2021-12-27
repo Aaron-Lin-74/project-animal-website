@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../contexts/AppContext'
-import LoginForm from '../LoginForm'
-import '../LoginSignUpForm.css'
+import LoginForm from '../components/LoginForm'
+import '../components/LoginSignUpForm.css'
 
 const Login = () => {
   const { scrollTop } = useGlobalContext()

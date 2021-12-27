@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './GalleryModal.css'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { FaTimes, FaPauseCircle, FaPlayCircle } from 'react-icons/fa'
-import { useHomeContext } from './contexts/HomeContext'
+import { useHomeContext } from '../contexts/HomeContext'
 
 const GalleryModal = ({ images }) => {
   const { closeModal, index, setIndex } = useHomeContext()

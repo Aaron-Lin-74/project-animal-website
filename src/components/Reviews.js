@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useGlobalContext } from './contexts/AppContext'
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi'
 import { FaQuoteRight } from 'react-icons/fa'
 import './Reviews.css'

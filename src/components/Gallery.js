@@ -2,7 +2,7 @@ import React from 'react'
 import './Gallery.css'
 import { HiPlus } from 'react-icons/hi'
 import GalleryModal from './GalleryModal'
-import { useHomeContext } from './contexts/HomeContext'
+import { useHomeContext } from '../contexts/HomeContext'
 
 const Gallery = () => {
   const { isModalOpen, openModal } = useHomeContext()

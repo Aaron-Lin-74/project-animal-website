@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
-import { useGlobalContext } from './contexts/AppContext'
-import { useAuth } from './contexts/AuthContext'
+import { useGlobalContext } from '../contexts/AppContext'
+import { useAuth } from '../contexts/AuthContext'
 import AnimalCard from './AnimalCard'
 import './AnimalType.css'
 

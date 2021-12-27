@@ -3,8 +3,8 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { FaTimes, FaBars } from 'react-icons/fa'
 import { GiTigerHead } from 'react-icons/gi'
-import { useGlobalContext } from './contexts/AppContext'
-import { useAuth } from './contexts/AuthContext'
+import { useGlobalContext } from '../contexts/AppContext'
+import { useAuth } from '../contexts/AuthContext'
 
 function Navbar() {
   const {
