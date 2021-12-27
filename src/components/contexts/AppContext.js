@@ -4,8 +4,6 @@ import axios from 'axios'
 const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
-  const serverUrl = process.env.REACT_APP_SERVER_URL
-
   // The animals data fetched from the server
   const [animals, setAnimals] = useState([])
 
@@ -31,9 +29,7 @@ export const AppProvider = ({ children }) => {
   const loadAnimals = async (type, limit) => {
     try {
       // Use query string to set the type and limit
-      const response = await axios.get(
-        `${serverUrl}/api/animals/${type}?limit=${limit}`
-      )
+      const response = await axios.get(`/api/animals/${type}?limit=${limit}`)
       setAnimals(response.data)
     } catch (err) {
       console.log(err)
@@ -75,7 +71,6 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        serverUrl,
         animals,
         loadAnimals,
         isSubmenuOpen,

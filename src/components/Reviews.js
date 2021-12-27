@@ -8,12 +8,11 @@ const Reviews = () => {
   const [reviews, setReviews] = useState(null)
   const [index, setIndex] = useState(0)
   const [isLoaded, setIsLoaded] = useState(false)
-  const { serverUrl } = useGlobalContext()
 
   // Fetch the reviews from the server
   const fetchReivews = async () => {
     try {
-      const response = await fetch(`${serverUrl}/api/reviews`)
+      const response = await fetch(`/api/reviews`)
       if (!response.ok) {
         throw new Error('Network response was not OK')
       }

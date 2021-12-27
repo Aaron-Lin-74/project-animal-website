@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useGlobalContext } from './AppContext'
 
@@ -7,12 +7,11 @@ const AuthContext = React.createContext()
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate()
-  const { serverUrl } = useGlobalContext()
 
   async function signUp(user) {
     // create a new user, this is the test api url
     try {
-      const response = await fetch(`${serverUrl}/api/users`, {
+      const response = await fetch(`/api/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -35,7 +34,7 @@ export function AuthProvider({ children }) {
   async function login(user) {
     // create a new user, this is the test api url
     try {
-      const response = await fetch(`${serverUrl}/api/auth`, {
+      const response = await fetch(`/api/auth`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +64,7 @@ export function AuthProvider({ children }) {
 
   async function updateUserProfile(user) {
     try {
-      const response = await fetch(`${serverUrl}/api/users`, {
+      const response = await fetch(`/api/users`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +86,7 @@ export function AuthProvider({ children }) {
 
   async function deleteUser() {
     try {
-      const response = await fetch(`${serverUrl}/api/users`, {
+      const response = await fetch(`/api/users`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`,
