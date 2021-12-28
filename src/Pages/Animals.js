@@ -15,7 +15,7 @@ const Animals = () => {
 
     // Always use a cleanup function to avoid the memery leak and overwritten issue
     return () => window.removeEventListener('scroll', showScrollBtn)
-  }, [scrollTop])
+  }, [scrollTop, scrollTopRef])
 
   // When the user scrolls down 20px from the top of the document, show the button
   const showScrollBtn = () => {
