@@ -8,7 +8,7 @@ import './AnimalType.css'
 
 const AnimalType = () => {
   const { animalType } = useParams()
-  const type = animalType.endsWith('s') && animalType.slice(0, -1)
+  const type = animalType.endsWith('s') ? animalType.slice(0, -1) : animalType
   const allTypes = [
     'mammal',
     'fish',
