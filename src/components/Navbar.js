@@ -49,14 +49,13 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <a
+            <span
               className='nav-links'
-              onClick={closeMobileMenu}
-              onClick={toggleSubmenu}
+              onClick={(closeMobileMenu, toggleSubmenu)}
               onMouseOver={displaySubmenu}
             >
               Animals
-            </a>
+            </span>
           </li>
           <li className='nav-item'>
             <Link
@@ -80,9 +79,9 @@ function Navbar() {
           )}
           {currentUser ? (
             <li>
-              <a className='nav-links-sign-up' onClick={logout}>
+              <span className='nav-links-sign-up' onClick={logout}>
                 Log out
-              </a>
+              </span>
             </li>
           ) : (
             <li>
