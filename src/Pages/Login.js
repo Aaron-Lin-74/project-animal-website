@@ -7,7 +7,7 @@ const Login = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     <div className='login'>
       <div className='login-flex'>

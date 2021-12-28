@@ -5,7 +5,7 @@ const Contact = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
 
   return (
     <div className='contact'>

@@ -6,7 +6,7 @@ const Error = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     <div className='error'>
       <h1>404</h1>

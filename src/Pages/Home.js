@@ -11,7 +11,7 @@ const Home = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     <div>
       <HomeProvider>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Outlet } from 'react-router-dom'
 import { ImArrowUp } from 'react-icons/im'
 import { useGlobalContext } from '../contexts/AppContext'
@@ -15,7 +15,7 @@ const Animals = () => {
 
     // Always use a cleanup function to avoid the memery leak and overwritten issue
     return () => window.removeEventListener('scroll', showScrollBtn)
-  }, [])
+  }, [scrollTop])
 
   // When the user scrolls down 20px from the top of the document, show the button
   const showScrollBtn = () => {

@@ -8,7 +8,7 @@ const Dashboard = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     currentUser && (
       <div className='dashboard'>

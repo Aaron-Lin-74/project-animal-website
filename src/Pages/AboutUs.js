@@ -5,7 +5,7 @@ const AboutUs = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     <div className='about-us'>
       <h1>About Us</h1>

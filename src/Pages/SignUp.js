@@ -7,7 +7,7 @@ const SignUp = () => {
   const { scrollTop } = useGlobalContext()
   useEffect(() => {
     scrollTop()
-  }, [])
+  }, [scrollTop])
   return (
     <div className='sign-up'>
       <div className='sign-up-flex'>

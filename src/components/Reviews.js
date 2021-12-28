@@ -44,7 +44,7 @@ const Reviews = () => {
         setIndex(0)
       }
     }
-  }, [index, reviews])
+  }, [index, reviews, isLoaded])
 
   // Let the reivews keep rolling
   useEffect(() => {
