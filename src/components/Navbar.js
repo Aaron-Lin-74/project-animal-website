@@ -49,13 +49,14 @@ function Navbar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <span
+            <Link
+              to='/animals'
               className='nav-links'
               onClick={(closeMobileMenu, toggleSubmenu)}
               onMouseOver={displaySubmenu}
             >
               Animals
-            </span>
+            </Link>
           </li>
           <li className='nav-item'>
             <Link

@@ -8,15 +8,10 @@ import './AnimalType.css'
 
 const AnimalType = () => {
   const { animalType } = useParams()
+
+  // Change the animal type from plural to single
   const type = animalType.endsWith('s') ? animalType.slice(0, -1) : animalType
-  const allTypes = [
-    'mammal',
-    'fish',
-    'bird',
-    'reptile',
-    'amphibian',
-    'invertebrate',
-  ]
+
   const { currentUser } = useAuth()
   const navigate = useNavigate()
   const location = useLocation()
@@ -25,7 +20,7 @@ const AnimalType = () => {
   const [limit, setLimit] = useState(3)
 
   // The url of the backend server, defined in the AppContext
-  const { scrollTop } = useGlobalContext()
+  const { scrollTop, allTypes } = useGlobalContext()
   const loadMoreRef = useRef()
 
   // Store the url as a state, update url when the type or limit changed

@@ -19,6 +19,7 @@ import Contact from './Pages/Contact'
 import AboutUs from './Pages/AboutUs'
 import FAQ from './Pages/FAQ'
 import TermsOfUse from './Pages/TermsOfUse'
+import AllAnimals from './components/AllAnimals'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
             <Route path='/sign-up' element={<SignUp />}></Route>
             <Route path='/login' element={<Login />}></Route>
             <Route path='/animals' element={<Animals />}>
+              <Route index element={<AllAnimals />}></Route>
               <Route path=':animalType' element={<AnimalType />}></Route>
             </Route>
             <Route

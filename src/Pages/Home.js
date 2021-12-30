@@ -12,7 +12,7 @@ const Home = () => {
     scrollTop()
   }, [scrollTop])
   return (
-    <div>
+    <div className='home'>
       <HeroSection />
       <Gallery />
       <Cards />
