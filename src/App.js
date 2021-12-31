@@ -1,4 +1,5 @@
 import './App.css'
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -20,8 +21,33 @@ import AboutUs from './Pages/AboutUs'
 import FAQ from './Pages/FAQ'
 import TermsOfUse from './Pages/TermsOfUse'
 import AllAnimals from './components/AllAnimals'
+import Button from './components/Button'
+import { useGlobalContext } from './contexts/AppContext'
 
 function App() {
+  const { scrollTop } = useGlobalContext()
+  const [display, setDisplay] = useState('none')
+
+  // Add onscroll event listener determining to show the button or not
+  useEffect(() => {
+    scrollTop()
+    window.addEventListener('scroll', showScrollBtn)
+
+    // Always use a cleanup function to avoid the memery leak and overwritten issue
+    return () => window.removeEventListener('scroll', showScrollBtn)
+  }, [scrollTop])
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  const showScrollBtn = () => {
+    if (
+      document.body.scrollTop > 20 ||
+      document.documentElement.scrollTop > 20
+    ) {
+      setDisplay('block')
+    } else {
+      setDisplay('none')
+    }
+  }
   return (
     <>
       <Router>
@@ -60,7 +86,11 @@ function App() {
             <Route path='/terms-of-use' element={<TermsOfUse />}></Route>
             <Route path='*' element={<Error />}></Route>
           </Routes>
-
+          <Button
+            buttonStyle='btn--scrollUp'
+            onClick={scrollTop}
+            display={display}
+          />
           <Footer />
         </AuthProvider>
       </Router>
