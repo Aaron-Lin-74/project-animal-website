@@ -99,6 +99,11 @@ export const AppProvider = ({ children }) => {
     document.getElementById('hero-video').play()
   }
 
+  // redirect to the url on a new tab
+  const redirect = (url) => {
+    window.open(url, '_blank')
+  }
+
   useEffect(() => {
     // Check the small large screen break point
     window.addEventListener('resize', checkScreenSize)
@@ -130,6 +135,7 @@ export const AppProvider = ({ children }) => {
         closeModal,
         galleryImageNames,
         modalIndex,
+        redirect,
       }}
     >
       {children}

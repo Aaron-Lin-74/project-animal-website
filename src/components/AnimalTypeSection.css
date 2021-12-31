@@ -13,8 +13,16 @@
 .animal-type-text {
   padding-top: 5vh;
   text-align: center;
-  text-transform: uppercase;
+}
+
+.animal-type-text h1 {
   font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.animal-type-text p {
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .animal-type-btns-container {
