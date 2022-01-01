@@ -14,7 +14,7 @@ const Error = () => {
         Sorry, we can't find that page. Don't worry through, everything is still
         awesome.
       </p>
-      <Button>Home</Button>
+      <Button path='/'>Home</Button>
     </div>
   )
 }
