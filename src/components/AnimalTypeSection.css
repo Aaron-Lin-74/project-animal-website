@@ -8,6 +8,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  /* Defines the top margin of the anchor sections  */
+  scroll-margin-top: 80px;
 }
 
 .animal-type-text {
@@ -27,6 +29,11 @@
 
 .animal-type-btns-container {
   padding-bottom: 1vh;
+}
+
+.animal-type-btn-down.last-section {
+  /* Leave the space, but hide the button */
+  visibility: hidden;
 }
 
 .animal-type-btn-down {

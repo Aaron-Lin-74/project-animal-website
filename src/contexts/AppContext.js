@@ -6,18 +6,28 @@ const AppContext = React.createContext()
 export const AppProvider = ({ children }) => {
   // The animals data fetched from the server
   // const [animals, setAnimals] = useState([])
-  // All types of animals
+  // All types of animals in single form
   const allTypes = [
     'mammal',
     'bird',
-    'fish',
     'reptile',
+    'fish',
     'amphibian',
     'invertebrate',
   ]
 
+  // All types of animals in single form
+  const allTypesPlural = [
+    'mammals',
+    'birds',
+    'reptiles',
+    'fish',
+    'amphibians',
+    'invertebrates',
+  ]
+
   // Premium types that require user login
-  const premiumTypes = ['fish', 'reptiles', 'amphibians', 'invertebrates']
+  const premiumTypes = ['reptiles', 'fish', 'amphibians', 'invertebrates']
 
   // Small large screen break point is 960px
   const screenBreakPoint = 960
@@ -116,6 +126,7 @@ export const AppProvider = ({ children }) => {
         // animals,
         // loadAnimals,
         allTypes,
+        allTypesPlural,
         premiumTypes,
         isSubmenuOpen,
         openSubmenu,
