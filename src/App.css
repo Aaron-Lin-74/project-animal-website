@@ -5,6 +5,7 @@
     rgba(253, 160, 142, 1) 100%
   );
   --mainFontColor: #fff;
+  --headerHeight: 80px;
 }
 
 *,

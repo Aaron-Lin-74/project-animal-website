@@ -1,6 +1,6 @@
 .navbar {
   background: var(--backgroundColor);
-  height: 80px;
+  height: var(--headerHeight);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +17,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80px;
+  height: var(--headerHeight);
   max-width: 1500px;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .nav-item {
-  height: 80px;
+  height: var(--headerHeight);
 }
 
 .nav-links {
@@ -93,11 +93,11 @@
     flex-direction: column;
     width: 100%;
     /* The height of the nav bar is 80px */
-    height: calc(100vh - 80px);
+    height: calc(100vh - var(--headerHeight));
     position: absolute;
     align-items: stretch;
     /* leave the space for navbar */
-    top: 80px;
+    top: var(--headerHeight);
     /* when not active, hide to the left */
     left: -100%;
     opacity: 1;
