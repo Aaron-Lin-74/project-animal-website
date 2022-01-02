@@ -7,9 +7,9 @@ const Services = () => {
     scrollTop()
   }, [scrollTop])
   return (
-    <div className='services'>
+    <main className='services'>
       <h1>Services</h1>
-    </div>
+    </main>
   )
 }
 

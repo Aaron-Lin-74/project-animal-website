@@ -8,14 +8,14 @@ const Error = () => {
     scrollTop()
   }, [scrollTop])
   return (
-    <div className='error'>
+    <main className='error'>
       <h1>404</h1>
       <p>
         Sorry, we can't find that page. Don't worry through, everything is still
         awesome.
       </p>
       <Button path='/'>Home</Button>
-    </div>
+    </main>
   )
 }
 

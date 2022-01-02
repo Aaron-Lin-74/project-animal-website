@@ -8,9 +8,9 @@ const Contact = () => {
   }, [scrollTop])
 
   return (
-    <div className='contact'>
+    <main className='contact'>
       <h1>Contact</h1>
-    </div>
+    </main>
   )
 }
 

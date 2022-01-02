@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom'
 
 const Animals = () => {
   return (
-    <div className='animals'>
+    <main className='animals'>
       <Outlet />
-    </div>
+    </main>
   )
 }
 

@@ -7,9 +7,9 @@ const TermsOfUse = () => {
     scrollTop()
   }, [scrollTop])
   return (
-    <div className='terms-of-use'>
+    <main className='terms-of-use'>
       <h1>Terms of Use</h1>
-    </div>
+    </main>
   )
 }
 

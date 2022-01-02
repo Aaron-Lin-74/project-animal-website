@@ -12,12 +12,12 @@ const Home = () => {
     scrollTop()
   }, [scrollTop])
   return (
-    <div className='home'>
+    <main className='home'>
       <HeroSection />
       <Gallery />
       <Cards />
       <Reviews />
-    </div>
+    </main>
   )
 }
 
