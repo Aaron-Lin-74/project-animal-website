@@ -104,8 +104,8 @@ export const AppProvider = ({ children }) => {
   const closeModal = () => {
     setIsModalOpen(false)
     // document.body.style.position = ''
-    document.body.style.overflow = 'visible'
-    // document.body.style.setProperty('overflow', 'visible', 'important')
+    // document.body.style.overflow = 'visible'
+    document.body.style.setProperty('overflow', 'visible', 'important')
     document.getElementById('hero-video').play()
   }
 

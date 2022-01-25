@@ -24,8 +24,10 @@ const useFetch = (url, withToken = false) => {
           }
         }
         const response = await axios.get(url, config)
-        setData(response.data)
-        setIsLoaded(true)
+        if (response.status === 200) {
+          setData(response.data)
+          setIsLoaded(true)
+        }
       } catch (err) {
         console.log(err)
       }
