@@ -47,14 +47,12 @@ body {
 .services,
 .contact,
 .faq,
-.about-us,
-.terms-of-use {
+.about-us {
   background-image: url(./backgroundImages/forest.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--mainFontColor);
-  font-size: 100px;
 }
 
 .contact {
@@ -69,7 +67,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--mainFontColor);
-  font-size: 100px;
 }
 
 .login,
@@ -91,6 +88,35 @@ body {
   color: var(--mainFontColor);
 }
 
+.terms-of-use-container {
+  background: rgba(0, 0, 0, 0.7) url(./backgroundImages/owl-wallpaper.jpg);
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-blend-mode: darken; */
+  color: var(--mainFontColor);
+  height: 90vh;
+  overflow-y: scroll;
+}
+.terms-of-use {
+  width: 700px;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding: 10px 20px;
+  margin: 0 auto;
+  /* backdrop-filter: blur(20px); */
+}
+.terms-of-use h2 {
+  text-align: center;
+  padding: 20px 0;
+}
+.terms-of-use h3 {
+  padding: 15px 0;
+}
+.terms-of-use p {
+  padding: 5px 0;
+}
 .error {
   background-image: url(./backgroundImages/error.jpg);
   background-position: right;

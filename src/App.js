@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './Pages/Home'
-import Services from './Pages/Services'
 import Products from './Pages/Products'
 import SignUp from './Pages/SignUp'
 import Login from './Pages/Login'
@@ -56,7 +55,6 @@ function App() {
           <Submenu />
           <Routes>
             <Route path='/' element={<Home />}></Route>
-            <Route path='/services' element={<Services />}></Route>
             <Route path='/products' element={<Products />}></Route>
             <Route path='/sign-up' element={<SignUp />}></Route>
             <Route path='/login' element={<Login />}></Route>
