@@ -3,6 +3,7 @@ import './Navbar.css'
 import { Link } from 'react-router-dom'
 import { FaTimes, FaBars } from 'react-icons/fa'
 import { GiTigerHead } from 'react-icons/gi'
+import { TiArrowSortedDown, TiArrowSortedUp } from 'react-icons/ti'
 import { useGlobalContext } from '../contexts/AppContext'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -10,6 +11,7 @@ function Navbar() {
   const {
     openSubmenu,
     closeSubmenu,
+    isSubmenuOpen,
     toggleSubmenu,
     isSidebarClicked,
     toggleSidebar,
@@ -55,16 +57,13 @@ function Navbar() {
               onClick={(closeMobileMenu, toggleSubmenu)}
               onMouseOver={displaySubmenu}
             >
-              Animals
+              Animals{' '}
+              {isSubmenuOpen ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
             </Link>
           </li>
           <li className='nav-item'>
-            <Link
-              to='/services'
-              className='nav-links'
-              onClick={closeMobileMenu}
-            >
-              Services
+            <Link to='/contact' className='nav-links' onClick={closeMobileMenu}>
+              Contact
             </Link>
           </li>
           {currentUser && (
