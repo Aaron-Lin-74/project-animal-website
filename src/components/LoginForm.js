@@ -24,12 +24,12 @@ const LoginForm = () => {
       }
       const result = await login(user)
       if (!result) {
-        showError('Failed to login to account')
+        showError('Failed to login to account, please try later.')
         return
       }
       navigate(state?.path || '/dashboard')
     } catch {
-      showError('Failed to login to account')
+      showError('Failed to login to account, please try later.')
       setLoading(false)
     }
   }

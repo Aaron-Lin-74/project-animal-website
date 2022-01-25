@@ -29,12 +29,12 @@ const SignUpForm = () => {
       }
       const result = await signUp(user)
       if (!result) {
-        showError('The error from the fetch')
+        showError('Something went wrong, please try later.')
         return
       }
       navigate('/dashboard')
     } catch {
-      showError('Failed to create an account')
+      showError('Failed to create an account, please try later.')
       setLoading(false)
     }
   }

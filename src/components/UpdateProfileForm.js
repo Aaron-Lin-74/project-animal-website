@@ -46,7 +46,7 @@ const UpdateProfileForm = () => {
       // const result = await Promise.all(promises)
       const result = await updateUserProfile(updatedUser)
       if (!result) {
-        showError('Failed to update the profile')
+        showError('Failed to update the profile, please try later.')
         return
       }
 
@@ -58,7 +58,7 @@ const UpdateProfileForm = () => {
       }
       navigate('/dashboard')
     } catch {
-      showError('Failed to update the profile')
+      showError('Failed to update the profile, please try later.')
       setLoading(false)
     }
   }
