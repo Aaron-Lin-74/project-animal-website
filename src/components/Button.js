@@ -9,6 +9,7 @@ const STYLES = [
   'btn--danger',
   'btn--confirm',
   'btn--scrollUp',
+  'btn--submit',
 ]
 const SIZES = ['btn--medium', 'btn--large']
 

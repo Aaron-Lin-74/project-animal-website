@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import Button from './Button'
 
 const SignUpForm = () => {
   const userNameRef = useRef()
@@ -82,9 +83,11 @@ const SignUpForm = () => {
           ref={passwordConfirmRef}
           required
         />
-        <button disabled={loading} type='submit'>
-          Sign Up
-        </button>
+        <div className='btn-wrap'>
+          <Button disabled={loading} type='submit' buttonStyle='btn--submit'>
+            Sign Up
+          </Button>
+        </div>
         <div className='switch'>
           Already have an account? <Link to='/login'>Log In</Link>
         </div>

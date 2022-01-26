@@ -51,23 +51,9 @@
   opacity: 1; /* Firefox */
 }
 
-.contact-form button {
+.btn-wrap {
   margin-top: 10px;
-  width: 100%;
-  background-color: #fff;
-  color: #080710;
-  padding: 15px 0;
-  font-size: 18px;
-  font-weight: 600;
-  border-radius: 5px;
-  cursor: pointer;
 }
-
-.contact-form button:hover {
-  transform: scale(1.1);
-  background-color: lightgreen;
-}
-
 .contact-error {
   background-color: rgba(235, 108, 108, 0.8);
   width: 400px;

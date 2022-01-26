@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react'
 import './ContactForm.css'
 import { useNavigate } from 'react-router-dom'
 import { GrSend } from 'react-icons/gr'
+import Button from './Button'
 
 const ContactForm = () => {
   const navigate = useNavigate()
@@ -40,7 +41,7 @@ const ContactForm = () => {
         }
       })
       .then((data) => {
-        navigate('/thankYou')
+        navigate('/thank-you/contact')
       })
       .catch((error) => {
         showError('Something went wrong, please try later.')
@@ -65,10 +66,11 @@ const ContactForm = () => {
           required
         />
         <textarea ref={messageRef} placeholder='Message' required />
-
-        <button disabled={loading} type='submit'>
-          Send <GrSend />
-        </button>
+        <div className='btn-wrap'>
+          <Button disabled={loading} type='submit' buttonStyle='btn--submit'>
+            Send <GrSend />
+          </Button>
+        </div>
       </form>
     </div>
   )

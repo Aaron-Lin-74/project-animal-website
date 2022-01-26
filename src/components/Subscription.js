@@ -18,7 +18,7 @@ const Subscription = () => {
             required
           />
           <Button buttonStyle='btn--outline' buttonSize='btn--medium'>
-            Subscribe
+            Join Now
           </Button>
         </form>
       </div>

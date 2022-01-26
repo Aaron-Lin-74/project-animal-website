@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import Button from './Button'
 
 const LoginForm = () => {
   const emailRef = useRef()
@@ -62,10 +63,11 @@ const LoginForm = () => {
           ref={passwordRef}
           required
         />
-
-        <button disabled={loading} type='submit'>
-          Log In
-        </button>
+        <div className='btn-wrap'>
+          <Button disabled={loading} type='submit' buttonStyle='btn--submit'>
+            Log In
+          </Button>
+        </div>
         <div className='switch'>
           Need to create an account? <Link to='/sign-up'>Sign Up</Link>
         </div>
