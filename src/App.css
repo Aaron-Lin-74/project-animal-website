@@ -22,6 +22,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Styles for the pages */
 .home,
 .animals {
   min-width: 320px;
@@ -35,7 +36,6 @@ body {
 .error,
 .contact,
 .about-us,
-.faq,
 .terms-of-use {
   display: flex;
   min-height: 90vh;
@@ -46,7 +46,6 @@ body {
 
 .services,
 .contact,
-.faq,
 .about-us {
   background-image: url(./backgroundImages/forest.jpg);
   background-position: center;
@@ -93,7 +92,6 @@ body {
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-blend-mode: darken; */
   color: var(--mainFontColor);
   height: 90vh;
   overflow-y: scroll;
@@ -148,6 +146,31 @@ body {
   letter-spacing: 2px;
 }
 
+.faq {
+  display: flex;
+  flex-direction: column;
+  min-height: 90vh;
+  align-items: center;
+}
+
+.faq h1 {
+  padding: 30px 10px;
+}
+.faq-img-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.faq-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .error {
   background-image: url(./backgroundImages/error.jpg);
   background-position: right;
@@ -172,6 +195,11 @@ body {
   .terms-of-use {
     margin-left: 30%;
   }
+
+  .faq-img-container {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -187,5 +215,9 @@ body {
   }
   .thank-you-container {
     width: 80%;
+  }
+  .faq-img-container {
+    width: 150px;
+    height: 150px;
   }
 }
