@@ -28,24 +28,27 @@ const AnimalType = () => {
   const [withToken, setWithToken] = useState(false)
   const { data: animals } = useFetch(url, withToken)
 
-  // Every time the animal type changes, scroll to the top
   useEffect(() => {
+    // Every time the animal type changes, scroll to the top
     scrollTop()
-    // If user types the wrong route instead of using menu, navigate to 404
+
+    // If user types the wrong route instead of using menu, navigate to error page
     if (!allTypes.includes(type)) {
       navigate('/error', { replace: true })
       return
     }
+
     // Only Mammal and Bird are public, the rest types need log in
     if (!currentUser && type !== 'mammal' && type !== 'bird') {
       navigate('/login', { replace: true, path: location.pathname })
       return
     }
+
     // If user has loged in, access private route with token
     if (currentUser && type !== 'mammal' && type !== 'bird') {
       setWithToken(true)
     }
-  }, [type, currentUser, scrollTop])
+  }, [type, currentUser, scrollTop, allTypes, navigate, location.pathname])
 
   // Specify the type of the animal and number of animals to fetch
   useEffect(() => {

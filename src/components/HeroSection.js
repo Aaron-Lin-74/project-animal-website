@@ -7,9 +7,9 @@ import { useGlobalContext } from '../contexts/AppContext'
 const HeroSection = () => {
   const videoRef = useRef()
   const [isPlay, setIsPlay] = useState(true)
-
   const { redirect } = useGlobalContext()
-  // toggle the play or pause of the hero video
+
+  // Toggle the play or pause of the hero video
   const pausePlayVideo = () => {
     setIsPlay(!isPlay)
     if (videoRef.current.paused || videoRef.current.ended)

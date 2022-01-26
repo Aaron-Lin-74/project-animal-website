@@ -22,7 +22,6 @@ const SignUpForm = () => {
     try {
       setError('')
       setLoading(true)
-      // await signup(emailRef.current.value, passwordRef.current.value)
       const user = {
         name: userNameRef.current.value,
         email: emailRef.current.value,
@@ -40,6 +39,7 @@ const SignUpForm = () => {
     }
   }
 
+  // The error notice will disappear after 5 seconds
   function showError(message) {
     setError(message)
     setTimeout(() => setError(''), 5000)

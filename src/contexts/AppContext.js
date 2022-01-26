@@ -16,7 +16,7 @@ export const AppProvider = ({ children }) => {
     'invertebrate',
   ]
 
-  // All types of animals in single form
+  // All types of animals in plural form
   const allTypesPlural = [
     'mammals',
     'birds',
@@ -57,15 +57,6 @@ export const AppProvider = ({ children }) => {
   // location is an object that has the coordinate (x, y) properties
   const [location, setLocation] = useState({})
 
-  // const loadAnimals = async (type, limit) => {
-  //   try {
-  //     // Use query string to set the type and limit
-  //     const response = await axios.get(`/api/animals/${type}?limit=${limit}`)
-  //     setAnimals(response.data)
-  //   } catch (err) {
-  //     console.log(err)
-  //   }
-  // }
   const openSubmenu = (page, coordinate) => {
     setLocation(coordinate)
     setIsSubmenuOpen(true)
@@ -123,8 +114,6 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        // animals,
-        // loadAnimals,
         allTypes,
         allTypesPlural,
         premiumTypes,
