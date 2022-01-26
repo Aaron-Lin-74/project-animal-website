@@ -100,7 +100,7 @@
     top: var(--headerHeight);
     /* when not active, hide to the left */
     left: -100%;
-    opacity: 1;
+    opacity: 0;
     transition: all 0.5s ease;
     padding-left: 0;
   }
