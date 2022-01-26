@@ -116,6 +116,38 @@ body {
 .terms-of-use p {
   padding: 5px 0;
 }
+
+.thank-you {
+  min-height: 90vh;
+  background-image: url(./backgroundImages/thankYou.jpg);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--mainFontColor);
+  flex-direction: column;
+}
+
+.thank-you-container {
+  position: relative;
+  top: 20vh;
+  width: 30vw;
+  height: 50vh;
+  margin-left: 10vw;
+  padding: 20px 10px;
+  border: 2px solid white;
+  backdrop-filter: blur(20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+}
+.thank-you h1 {
+  font-family: serif;
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
 .error {
   background-image: url(./backgroundImages/error.jpg);
   background-position: right;
@@ -149,5 +181,11 @@ body {
   .terms-of-use {
     backdrop-filter: blur(20px);
     margin-left: 0;
+  }
+  .thank-you {
+    background-position: left;
+  }
+  .thank-you-container {
+    width: 80%;
   }
 }

@@ -19,6 +19,7 @@ import Contact from './Pages/Contact'
 import AboutUs from './Pages/AboutUs'
 import FAQ from './Pages/FAQ'
 import TermsOfUse from './Pages/TermsOfUse'
+import ThankYou from './Pages/ThankYou'
 import AllAnimals from './components/AllAnimals'
 import Button from './components/Button'
 import { useGlobalContext } from './contexts/AppContext'
@@ -82,6 +83,7 @@ function App() {
             <Route path='/about-us' element={<AboutUs />}></Route>
             <Route path='/faq' element={<FAQ />}></Route>
             <Route path='/terms-of-use' element={<TermsOfUse />}></Route>
+            <Route path='/thank-you/:type' element={<ThankYou />}></Route>
             <Route path='*' element={<Error />}></Route>
           </Routes>
           <Button
