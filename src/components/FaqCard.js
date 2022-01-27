@@ -30,6 +30,7 @@ const FaqCard = ({ question, answer, setActiveIdx, activeIdx, index }) => {
           </span>
         </h3>
       </div>
+
       <div className={toggle ? 'collapse show' : 'collapse'}>{answer}</div>
     </div>
   )

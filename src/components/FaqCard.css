@@ -15,7 +15,9 @@
 
 .card-header.select h3 {
   color: #1f1f1f;
+  font-weight: 700;
 }
+
 .card-header h3 {
   font-size: 0.875rem;
   font-weight: 500;
@@ -23,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: rgb(141, 141, 140);
 }
 
 .arrow-icon {
@@ -34,20 +37,19 @@
 
 /* Answer */
 .collapse {
-  display: none;
-  padding: 15px 50px;
-  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
 }
 
 .collapse.show {
-  display: block;
   background-color: #d8e4f7;
-  padding-bottom: 0.625rem;
+  padding: 15px 50px;
   color: #1f1f1f;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  opacity: 1;
-  transition: opacity 250ms ease-in;
+  max-height: 70px;
+  transition: all 0.5s ease-in-out;
 }
 
 @media only screen and (max-width: 768px) {
