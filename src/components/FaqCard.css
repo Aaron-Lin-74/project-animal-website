@@ -48,7 +48,7 @@
   color: #1f1f1f;
   font-size: 0.875rem;
   line-height: 0.875rem;
-  max-height: 70px;
+  max-height: 100px;
   transition: all 0.5s ease-in-out;
 }
 
@@ -57,7 +57,7 @@
     padding: 10px 20px;
   }
 
-  .collapse {
+  .collapse.show {
     padding: 10px 20px;
   }
 }
