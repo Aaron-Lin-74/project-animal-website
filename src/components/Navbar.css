@@ -73,6 +73,7 @@
 
 .nav-links-sign-up {
   border: 2px solid #fff;
+  cursor: pointer;
 }
 .fa-bars {
   color: var(--mainFontColor);
