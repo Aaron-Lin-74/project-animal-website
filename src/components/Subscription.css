@@ -31,6 +31,12 @@
   font-size: 1rem;
 }
 
+.subscription .error-info {
+  background-color: red;
+  padding: 5px 40px;
+  border-radius: 10px;
+}
+
 @media screen and (max-width: 720px) {
   .subscription {
     padding-top: 5rem;
