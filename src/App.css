@@ -31,7 +31,6 @@ body {
 .products,
 .login,
 .sign-up,
-.dashboard,
 .update-profile,
 .error,
 .contact,
@@ -192,6 +191,15 @@ body {
   padding: 10px;
 }
 
+.dashboard {
+  min-height: 90vh;
+  background-image: url(./backgroundImages/cat-background.jpg);
+  background-position: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: auto;
+}
+
 @media only screen and (max-width: 1200px) {
   .terms-of-use {
     margin-left: 30%;
@@ -200,6 +208,9 @@ body {
   .faq-img-container {
     width: 200px;
     height: 200px;
+  }
+  .dashboard {
+    background-image: url(./backgroundImages/white-background.jpg);
   }
 }
 
