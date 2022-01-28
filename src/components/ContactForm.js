@@ -13,7 +13,7 @@ const ContactForm = () => {
   const messageRef = useRef()
   const [error, setError] = useState('')
 
-  // aviod multi clicks of the send button after first submission
+  // Aviod multi clicks of the send button after first submission
   const [loading, setLoading] = useState(false)
   const submitContactForm = (e) => {
     e.preventDefault()

@@ -8,7 +8,7 @@ const LoginForm = () => {
   const passwordRef = useRef()
 
   const [error, setError] = useState('')
-  // aviod multi clicks of the Sign Up button after first submission
+  // Aviod multi clicks of the Sign Up button after first submission
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const { login } = useAuth()

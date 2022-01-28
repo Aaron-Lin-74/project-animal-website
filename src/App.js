@@ -22,6 +22,7 @@ import TermsOfUse from './Pages/TermsOfUse'
 import ThankYou from './Pages/ThankYou'
 import AllAnimals from './components/AllAnimals'
 import Button from './components/Button'
+import AnimalDetails from './Pages/AnimalDetails'
 import { useGlobalContext } from './contexts/AppContext'
 
 function App() {
@@ -63,6 +64,10 @@ function App() {
               <Route index element={<AllAnimals />}></Route>
               <Route path=':animalType' element={<AnimalType />}></Route>
             </Route>
+            <Route
+              path='/animal/:animalName'
+              element={<AnimalDetails />}
+            ></Route>
             <Route
               path='/dashboard'
               element={
