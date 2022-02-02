@@ -16,7 +16,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import RequireAuth from './components/RequireAuth'
 import UpdateProfile from './Pages/UpdateProfile'
 import Contact from './Pages/Contact'
-import AboutUs from './Pages/AboutUs'
+import About from './Pages/About'
 import FAQ from './Pages/FAQ'
 import TermsOfUse from './Pages/TermsOfUse'
 import ThankYou from './Pages/ThankYou'
@@ -85,7 +85,7 @@ function App() {
               }
             ></Route>
             <Route path='/contact' element={<Contact />}></Route>
-            <Route path='/about-us' element={<AboutUs />}></Route>
+            <Route path='/about' element={<About />}></Route>
             <Route path='/faq' element={<FAQ />}></Route>
             <Route path='/terms-of-use' element={<TermsOfUse />}></Route>
             <Route path='/thank-you/:type' element={<ThankYou />}></Route>

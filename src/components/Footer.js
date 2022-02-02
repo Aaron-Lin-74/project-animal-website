@@ -12,7 +12,7 @@ const Footer = () => {
           <Link className='footer-btn' to='/contact'>
             Contact
           </Link>
-          <Link className='footer-btn' to='/about-us'>
+          <Link className='footer-btn' to='/about'>
             About Us
           </Link>
           <Link className='footer-btn' to='/faq'>
