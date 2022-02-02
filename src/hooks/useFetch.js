@@ -13,6 +13,7 @@ const useFetch = (url, withToken = false) => {
     // Fetch the data from the server
     // Move the function into the effect as it is only ever used in this local effect
     const fetchData = async () => {
+      setIsLoaded(false)
       try {
         let config
         if (withToken) {
@@ -30,6 +31,7 @@ const useFetch = (url, withToken = false) => {
         }
       } catch (err) {
         console.log(err)
+        setIsLoaded(true)
       }
     }
     fetchData()

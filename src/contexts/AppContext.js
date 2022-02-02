@@ -4,8 +4,8 @@ import React, { useState, useEffect, useContext, useCallback } from 'react'
 const AppContext = React.createContext()
 
 export const AppProvider = ({ children }) => {
-  // The animals data fetched from the server
-  // const [animals, setAnimals] = useState([])
+  const [searchTerm, setSearchTerm] = useState('')
+
   // All types of animals in single form
   const allTypes = [
     'mammal',
@@ -114,6 +114,8 @@ export const AppProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
+        searchTerm,
+        setSearchTerm,
         allTypes,
         allTypesPlural,
         premiumTypes,
