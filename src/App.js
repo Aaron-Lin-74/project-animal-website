@@ -11,7 +11,7 @@ import Submenu from './components/Submenu'
 import Error from './Pages/Error'
 import Animals from './Pages/Animals'
 import Dashboard from './Pages/Dashboard'
-import AnimalType from './components/AnimalType'
+import AnimalList from './components/AnimalList'
 import { AuthProvider } from './contexts/AuthContext'
 import RequireAuth from './components/RequireAuth'
 import UpdateProfile from './Pages/UpdateProfile'
@@ -22,6 +22,7 @@ import TermsOfUse from './Pages/TermsOfUse'
 import ThankYou from './Pages/ThankYou'
 import AllAnimals from './components/AllAnimals'
 import Button from './components/Button'
+import SearchForm from './components/SearchForm'
 import AnimalDetails from './Pages/AnimalDetails'
 import { useGlobalContext } from './contexts/AppContext'
 
@@ -62,7 +63,15 @@ function App() {
             <Route path='/login' element={<Login />}></Route>
             <Route path='/animals' element={<Animals />}>
               <Route index element={<AllAnimals />}></Route>
-              <Route path=':animalType' element={<AnimalType />}></Route>
+              <Route
+                path=':animalType'
+                element={
+                  <>
+                    <SearchForm />
+                    <AnimalList />
+                  </>
+                }
+              ></Route>
             </Route>
             <Route
               path='/animal/:animalName'
