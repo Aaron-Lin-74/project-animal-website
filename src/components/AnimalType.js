@@ -64,14 +64,14 @@ const AnimalType = () => {
   }
 
   return (
-    <main className='animals-container-flex'>
+    <article className='animals-container-flex'>
       {animals.map((animal) => {
         return <AnimalCard animal={animal} key={animal.name} />
       })}
       <button className='load-more' ref={loadMoreRef} onClick={loadMore}>
         Load more
       </button>
-    </main>
+    </article>
   )
 }
 
