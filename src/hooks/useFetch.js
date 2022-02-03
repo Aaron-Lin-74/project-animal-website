@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import axios from 'axios'
 
 /** Custom hook that fetches the data (like reviews and animals) from server
@@ -7,7 +8,6 @@ import axios from 'axios'
 const useFetch = (url, withToken = false) => {
   const [data, setData] = useState([])
   const [isLoaded, setIsLoaded] = useState(false)
-
   // When url or withToken changes, triggle fetchData function to update data
   useEffect(() => {
     // Fetch the data from the server
@@ -30,8 +30,7 @@ const useFetch = (url, withToken = false) => {
           setIsLoaded(true)
         }
       } catch (err) {
-        console.log(err)
-        setIsLoaded(true)
+        console.log(err.message)
       }
     }
     fetchData()

@@ -23,7 +23,7 @@ import ThankYou from './Pages/ThankYou'
 import AllAnimals from './components/AllAnimals'
 import Button from './components/Button'
 import SearchForm from './components/SearchForm'
-import AnimalDetails from './Pages/AnimalDetails'
+import SingleAnimal from './Pages/SingleAnimal'
 import { useGlobalContext } from './contexts/AppContext'
 
 function App() {
@@ -73,10 +73,7 @@ function App() {
                 }
               ></Route>
             </Route>
-            <Route
-              path='/animal/:animalName'
-              element={<AnimalDetails />}
-            ></Route>
+            <Route path='/animal/:id' element={<SingleAnimal />}></Route>
             <Route
               path='/dashboard'
               element={
