@@ -45,7 +45,7 @@ const AnimalList = () => {
       return
     }
 
-    // If user has loged in, access private route with token
+    // If user has logged in, access private route with token
     if (currentUser && type !== 'mammal' && type !== 'bird') {
       setWithToken(true)
     }
@@ -78,7 +78,7 @@ const AnimalList = () => {
   return (
     <article className='animals-container-flex'>
       {animals.map((animal) => {
-        return <AnimalCard animal={animal} key={animal.name} />
+        return <AnimalCard key={animal._id} {...animal} />
       })}
       <button className='load-more' ref={loadMoreRef} onClick={loadMore}>
         Load more

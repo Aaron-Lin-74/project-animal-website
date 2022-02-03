@@ -21,7 +21,7 @@ const SearchForm = () => {
             <FcSearch />
           </label>
           <input
-            type='text'
+            type='search'
             name='name'
             id='name'
             value={searchTerm}
