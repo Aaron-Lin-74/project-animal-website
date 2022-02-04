@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import Loading from '../components/Loading'
 import Button from '../components/Button'
 import { FcSpeaker } from 'react-icons/fc'
+import { BiArrowBack } from 'react-icons/bi'
 
 const SingleAnimal = () => {
   const { id } = useParams()
@@ -30,12 +31,12 @@ const SingleAnimal = () => {
   }
   return (
     <section className='animal-section'>
-      <div className='section-header'>
-        <Button path={`/animals/${animal.type}`} buttonStyle='btn--confirm'>
-          Back
+      <div className='animal-section-header'>
+        <Button path={`/animals/${animal.type}`} buttonStyle='btn--circle'>
+          <BiArrowBack />
         </Button>
-        <h2 className='section-title'>{name}</h2>
-        <Button onClick={() => speak(name)}>
+        <h2>{name}</h2>
+        <Button onClick={() => speak(name)} buttonStyle='btn--circle'>
           <FcSpeaker />
         </Button>
       </div>

@@ -4,28 +4,46 @@
     rgba(254, 193, 130, 1) 20%,
     rgba(253, 160, 142, 1) 100%
   );
+  --mainColor: rgb(253, 165, 140);
   --mainFontColor: #fff;
   --headerHeight: 80px;
+  --fullWidth: 1200px;
+  --minWidth: 320px;
+  --defaultWidth: 85vw;
 }
 
+/* 
+====== 
+Global Styles 
+======
+*/
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito Sans', sans-serif;
 }
 
 body {
   width: 100%;
   overflow-x: hidden;
+  font-family: 'Nunito Sans', sans-serif;
+  line-height: 1.4;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+img {
+  width: 100%;
+  height: 100%;
 }
 
 /* Styles for the pages */
 .home,
-.animals {
-  min-width: 320px;
+.animals,
+.single-animal {
+  min-width: var(--minWidth);
 }
 .products,
 .login,
@@ -39,7 +57,7 @@ body {
   min-height: 90vh;
   align-items: center;
   justify-content: center;
-  min-width: 320px;
+  min-width: var(--minWidth);
 }
 
 .contact,
@@ -84,6 +102,11 @@ body {
   color: var(--mainFontColor);
 }
 
+/* 
+====== 
+Terms of use
+======
+*/
 .terms-of-use-container {
   background: rgba(0, 0, 0, 0.7) url(./backgroundImages/owl-wallpaper.jpg);
   background-position: left;
@@ -111,6 +134,12 @@ body {
 .terms-of-use p {
   padding: 5px 0;
 }
+
+/* 
+====== 
+Thank You page
+======
+*/
 
 .thank-you {
   min-height: 90vh;
@@ -143,6 +172,11 @@ body {
   letter-spacing: 2px;
 }
 
+/* 
+====== 
+FAQ page
+======
+*/
 .faq {
   display: flex;
   flex-direction: column;
@@ -164,11 +198,15 @@ body {
 }
 
 .faq-img-container img {
-  width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
+/* 
+====== 
+Error page
+======
+*/
 .error {
   background-image: url(./backgroundImages/error.jpg);
   background-position: right;
@@ -198,6 +236,84 @@ body {
   overflow: auto;
 }
 
+/* 
+====== 
+Single Animal page
+======
+*/
+
+.animal-section {
+  text-align: center;
+  background-image: url(./backgroundImages/white-background.jpg);
+  padding-bottom: 50px;
+}
+
+.animal-section-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  width: var(--defaultWidth);
+  max-width: var(--fullWidth);
+  min-width: 320px;
+  margin: 0 auto;
+}
+.animal-section-header h2 {
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.animal-container {
+  display: grid;
+  grid-template-columns: 5fr 2fr;
+  grid-column-gap: 10px;
+  align-items: center;
+  width: var(--defaultWidth);
+  max-width: var(--fullWidth);
+  min-width: 320px;
+  margin: 0 auto;
+  text-align: left;
+  border-radius: 5px;
+  overflow: hidden;
+  background-color: #efefef;
+}
+.animal-info-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.animal-info-container p {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  text-transform: capitalize;
+  line-height: 1.8;
+  padding: 20px;
+  width: 300px;
+}
+.animal-info-container .animal-data {
+  margin-right: 0.5rem;
+  text-align: right;
+}
+.animal-data-title {
+  background: var(--mainColor);
+  padding: 0.25rem 0.5rem;
+  border-radius: 10px;
+  color: var(--mainFontColor);
+  text-align: left;
+}
+.animal-desc {
+  grid-column: span 2;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.8;
+}
+.animal-desc p {
+  padding: 10px;
+}
+
 @media only screen and (max-width: 1200px) {
   .terms-of-use {
     margin-left: 30%;
@@ -209,6 +325,17 @@ body {
   }
   .dashboard {
     background-image: url(./backgroundImages/white-background.jpg);
+  }
+  .animal-container {
+    display: flex;
+    flex-direction: column;
+    max-height: fit-content;
+  }
+  .animal-info-container {
+    padding-top: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
   }
 }
 
@@ -229,5 +356,14 @@ body {
   .faq-img-container {
     width: 150px;
     height: 150px;
+  }
+  .animal-info-container {
+    padding-top: 0;
+    width: 80%;
+    flex-direction: column;
+    align-items: center;
+  }
+  .animal-info-container p {
+    width: 100%;
   }
 }
