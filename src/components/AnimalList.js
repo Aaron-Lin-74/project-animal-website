@@ -72,7 +72,11 @@ const AnimalList = () => {
   // Show the notice when there is no result
   if (animals.length < 1) {
     return (
-      <h2 className='section-title'>No animal matched your search criteria.</h2>
+      <article className='animals-container-flex'>
+        <h2 className='animals-notice'>
+          No animal matched your search criteria.
+        </h2>
+      </article>
     )
   }
   return (

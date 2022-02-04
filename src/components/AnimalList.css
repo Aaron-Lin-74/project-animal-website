@@ -2,6 +2,10 @@
   margin: auto;
   display: flex;
   flex-direction: column;
+  min-height: 90vh;
+}
+.animals-notice {
+  margin: 0 auto;
 }
 .animal-cards {
   display: grid;
