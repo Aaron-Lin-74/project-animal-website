@@ -10,6 +10,7 @@ const STYLES = [
   'btn--confirm',
   'btn--scrollUp',
   'btn--submit',
+  'btn--circle',
 ]
 const SIZES = ['btn--medium', 'btn--large']
 
