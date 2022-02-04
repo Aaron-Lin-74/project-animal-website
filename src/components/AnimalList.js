@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { useGlobalContext } from '../contexts/AppContext'
 import { useAuth } from '../contexts/AuthContext'
-import AnimalCard from './AnimalCard'
+import CardItem from './CardItem'
 import useFetch from '../hooks/useFetch'
 import Loading from './Loading'
 import './AnimalList.css'
@@ -18,11 +18,11 @@ const AnimalList = () => {
   const location = useLocation()
 
   // The number of record shown at first place
-  const [limit, setLimit] = useState(3)
+  const [limit, setLimit] = useState(6)
 
   // The url of the backend server, defined in the AppContext
   const { scrollTop, allTypes, searchTerm } = useGlobalContext()
-  const loadMoreRef = useRef()
+  const [loadMore, setLoadMore] = useState(true)
 
   // Store the url as a state, update url when the type or limit changed
   const [url, setUrl] = useState(`/api/animals/${type}?limit=${limit}`)
@@ -57,10 +57,10 @@ const AnimalList = () => {
   }, [type, limit, searchTerm])
 
   // Load extra 3 records from the server when click load more
-  const loadMore = () => {
+  const handleLoadMore = () => {
     setLimit((limit) => limit + 3)
-    if (limit > animals.length) {
-      loadMoreRef.current.style.visibility = 'hidden'
+    if (limit + 3 > animals.length) {
+      setLoadMore(false)
     }
   }
 
@@ -77,10 +77,24 @@ const AnimalList = () => {
   }
   return (
     <article className='animals-container-flex'>
-      {animals.map((animal) => {
-        return <AnimalCard key={animal._id} {...animal} />
-      })}
-      <button className='load-more' ref={loadMoreRef} onClick={loadMore}>
+      <div className='animal-cards'>
+        {animals.map((animal) => {
+          return (
+            <CardItem
+              key={animal._id}
+              path={`/animal/${animal._id}`}
+              src={animal.imageUrl}
+              label={animal.type}
+              text={animal.name}
+              class='animal'
+            />
+          )
+        })}
+      </div>
+      <button
+        className={loadMore ? 'load-more' : 'load-more hidden'}
+        onClick={handleLoadMore}
+      >
         Load more
       </button>
     </article>

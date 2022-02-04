@@ -1,9 +1,13 @@
 .animals-container-flex {
-  width: 960px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
+}
+.animal-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 400px));
+  justify-content: center;
+  padding: 30px;
 }
 .animal-card {
   display: grid;
@@ -104,6 +108,10 @@
   font-size: 1rem;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.load-more.hidden {
+  visibility: hidden;
 }
 
 .load-more:hover {
