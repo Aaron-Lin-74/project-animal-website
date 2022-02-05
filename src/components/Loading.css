@@ -1,8 +1,7 @@
 .loading {
   width: clamp(100px, 20vw, 180px);
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
+  margin: 0 auto;
   padding: 30px;
   display: flex;
   flex-direction: column;

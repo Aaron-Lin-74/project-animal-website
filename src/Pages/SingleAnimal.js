@@ -12,6 +12,11 @@ const SingleAnimal = () => {
   const { data: animal, isLoaded } = useFetch(url)
   const { name, type, imageUrl, population, life, weight, length, link, desc } =
     animal
+  // Local state to show the loading component when image was loading
+  const [loading, setLoading] = React.useState(true)
+  const handleOnLoaded = () => {
+    setLoading(false)
+  }
 
   // Redirect to the wiki in a new tab
   const redirect = (link) => {
@@ -41,7 +46,8 @@ const SingleAnimal = () => {
         </Button>
       </div>
       <div className='animal-container'>
-        <img src={imageUrl} alt={name}></img>
+        {loading && <Loading />}
+        <img src={imageUrl} alt={name} onLoad={handleOnLoaded}></img>
         <div className='animal-info-container'>
           <p>
             <span className='animal-data-title'>name :</span>
