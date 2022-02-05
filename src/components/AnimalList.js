@@ -69,13 +69,22 @@ const AnimalList = () => {
     return <Loading />
   }
 
-  // Show the notice when there is no result
-  if (animals.length < 1) {
+  // Show the notice when there is no result from search
+  if (animals.length < 1 && searchTerm !== '') {
     return (
       <article className='animals-container-flex'>
         <h2 className='animals-notice'>
           No animal matched your search criteria.
         </h2>
+      </article>
+    )
+  }
+
+  // Show the notice when there is no animal for this type
+  if (animals.length < 1) {
+    return (
+      <article className='animals-container-flex'>
+        <h2 className='animals-notice'>Comming soon!</h2>
       </article>
     )
   }
