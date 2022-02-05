@@ -78,6 +78,9 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .card-item {
+    height: 200px;
+  }
   .card-item-text {
     font-size: 15px;
     line-height: 20px;

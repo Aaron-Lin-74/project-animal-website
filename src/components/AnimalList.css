@@ -2,10 +2,11 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 60vh;
 }
 .animals-notice {
   margin: 0 auto;
+  padding-top: 200px;
 }
 .animal-cards {
   display: grid;
