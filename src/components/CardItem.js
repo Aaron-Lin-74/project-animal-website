@@ -11,7 +11,7 @@ const CardItem = (props) => {
   }
   return (
     <>
-      <li className='card-item'>
+      <li className={`card-item ${props.class ? props.class : ''}`}>
         <Link className='card-item-link' to={props.path}>
           {loading && <Loading />}
           <figure

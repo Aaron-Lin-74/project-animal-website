@@ -3,9 +3,10 @@
   flex: 1;
   margin: 0 1rem 2rem;
   transition: all 250ms;
+}
+.card-item.animal {
   height: 300px;
 }
-
 .card-item-link {
   display: flex;
   flex-flow: column;
@@ -78,7 +79,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .card-item {
+  .card-item.aniaml {
     height: 200px;
   }
   .card-item-text {
