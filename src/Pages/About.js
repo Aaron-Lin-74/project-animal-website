@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../contexts/AppContext'
-import AboutSection from '../components/AboutSection'
+import AboutSection from '../components/AboutSection/AboutSection'
 
 const About = () => {
   const { scrollTop } = useGlobalContext()
