@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react'
-import './ContactForm.css'
+import './ContactForm.scss'
 import { useNavigate } from 'react-router-dom'
 import { GrSend } from 'react-icons/gr'
 import Button from './Button'
+import image from '../backgroundImages/default-profile.jpg'
 
 const ContactForm = () => {
   const navigate = useNavigate()
@@ -54,24 +55,31 @@ const ContactForm = () => {
     setTimeout(() => setError(''), 5000)
   }
   return (
-    <div>
+    <div className='contact-container'>
       {error && <div className='contact-error'>{error}</div>}
-      <form className='contact-form' onSubmit={submitContactForm}>
-        <h4>We'd love to hear from you!</h4>
-        <input type='text' ref={nameRef} placeholder='Name' required />
-        <input
-          type='email'
-          ref={emailRef}
-          placeholder='Example@example.com'
-          required
-        />
-        <textarea ref={messageRef} placeholder='Message' required />
-        <div className='btn-wrap'>
-          <Button disabled={loading} type='submit' buttonStyle='btn--submit'>
-            Send <GrSend />
-          </Button>
+      <div className='form-container'>
+        <form className='contact-form' onSubmit={submitContactForm}>
+          <h4>We'd love to hear from you!</h4>
+          <input type='text' ref={nameRef} placeholder='Name' required />
+          <input
+            type='email'
+            ref={emailRef}
+            placeholder='Example@example.com'
+            required
+          />
+          <textarea ref={messageRef} placeholder='Message' required />
+          <div className='btn-wrap'>
+            <Button disabled={loading} type='submit' buttonStyle='btn--submit'>
+              Send <GrSend />
+            </Button>
+          </div>
+        </form>
+      </div>
+      <div className='image-container'>
+        <div className='image-wrap'>
+          <img src={image} alt='quokka' />
         </div>
-      </form>
+      </div>
     </div>
   )
 }
