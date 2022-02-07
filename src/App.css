@@ -112,17 +112,18 @@ Terms of use
   background-position: left;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--mainFontColor);
-  height: 90vh;
-  overflow-y: scroll;
+  min-height: 90vh;
 }
 .terms-of-use {
-  max-width: 700px;
+  max-width: 800px;
   flex-direction: column;
   flex: 1;
   align-items: center;
   padding: 10px 20px;
   margin: 0 auto;
+  margin-left: 30%;
 }
 .terms-of-use h2 {
   text-align: center;
@@ -132,6 +133,8 @@ Terms of use
   padding: 15px 0;
 }
 .terms-of-use p {
+  font-size: 15px;
+  line-height: 2;
   padding: 5px 0;
 }
 
@@ -316,7 +319,8 @@ Single Animal page
 
 @media only screen and (max-width: 1200px) {
   .terms-of-use {
-    margin-left: 30%;
+    margin-left: 45%;
+    margin-right: 20px;
   }
 
   .faq-img-container {
@@ -345,7 +349,7 @@ Single Animal page
   }
   .terms-of-use {
     backdrop-filter: blur(20px);
-    margin-left: 0;
+    margin: 0;
   }
   .thank-you {
     background-position: left;
