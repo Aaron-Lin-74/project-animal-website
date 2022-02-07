@@ -1,9 +1,5 @@
-@mixin flexCenter($direction) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
-}
+@use 'src/styles/mixins';
+
 .about-section {
   background: rgba(0, 0, 0, 0.7) url(../../backgroundImages/owl-wallpaper.jpg);
   background-position: left;
@@ -14,7 +10,7 @@
   min-height: 90vh;
 
   .about-container {
-    @include flexCenter(column);
+    @include mixins.flexCenter(column);
     min-width: var(--minWidth);
     max-width: 800px;
     flex: 1;
