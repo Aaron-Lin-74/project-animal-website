@@ -22,14 +22,13 @@ const Subscription = () => {
         },
         body: JSON.stringify({ email }),
       })
-      const data = await response.json()
       if (!response.ok) {
-        showError(data.message)
-        return
+        throw new Error('Something went wrong, please try again later.')
       }
       navigate('/thank-you/subscription')
     } catch (err) {
-      showError(err)
+      showError(err.message)
+      setEmail('')
     }
   }
   return (
