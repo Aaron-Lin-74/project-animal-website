@@ -64,6 +64,8 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
   width: 105px;
+  border: 2px solid #fff;
+  cursor: pointer;
 }
 
 .nav-links:hover,
@@ -72,10 +74,6 @@
   transition: all 0.2s ease-out;
 }
 
-.nav-links-sign-up {
-  border: 2px solid #fff;
-  cursor: pointer;
-}
 .fa-bars {
   color: var(--mainFontColor);
 }
@@ -86,10 +84,6 @@
 
 /* When the screen is smaller than 960px, nav bar will enter the mobile mode */
 @media screen and (max-width: 960px) {
-  /* .NavbarItems {
-    position: relative;
-  } */
-
   .nav-menu {
     display: flex;
     flex-direction: column;
