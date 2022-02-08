@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../contexts/AppContext'
+import ProductSection from '../components/ProductSection/ProductSection'
 
 const Products = () => {
   const { scrollTop } = useGlobalContext()
@@ -8,7 +9,7 @@ const Products = () => {
   }, [scrollTop])
   return (
     <main className='products'>
-      <h1>Products</h1>
+      <ProductSection />
     </main>
   )
 }

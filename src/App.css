@@ -60,27 +60,25 @@ img {
   min-width: var(--minWidth);
 }
 
-.contact,
-.about-us {
-  background-image: url(./backgroundImages/africa.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: var(--mainFontColor);
-}
-
-.contact {
-  flex-direction: column;
-  font-size: 30px;
-  padding: 20px 0;
-}
-
+.about-us,
 .products {
   background-image: url(./backgroundImages/africa.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: var(--mainFontColor);
+}
+.contact {
+  background-image: url(./backgroundImages/forest.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--mainFontColor);
+}
+.contact {
+  flex-direction: column;
+  font-size: 30px;
+  padding: 20px 0;
 }
 
 .login,
