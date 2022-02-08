@@ -10,27 +10,25 @@ const CardItem = (props) => {
     setLoading(false)
   }
   return (
-    <>
-      <li className={`card-item ${props.class ? props.class : ''}`}>
-        <Link className='card-item-link' to={props.path}>
-          {loading && <Loading />}
-          <figure
-            className={`card-item-img-wrap ${props.class ? props.class : ''}`}
-            data-category={props.label}
-          >
-            <img
-              className={loading ? 'hidden' : 'card-item-img'}
-              src={props.src}
-              alt='Animal'
-              onLoad={handleOnLoaded}
-            />
-          </figure>
-          <div className='card-item-info'>
-            <h5 className='card-item-text'>{props.text}</h5>
-          </div>
-        </Link>
-      </li>
-    </>
+    <div className={`card-item ${props.class ? props.class : ''}`}>
+      <Link className='card-item-link' to={props.path}>
+        {loading && <Loading />}
+        <figure
+          className={`card-item-img-wrap ${props.class ? props.class : ''}`}
+          data-category={props.label}
+        >
+          <img
+            className={loading ? 'hidden' : 'card-item-img'}
+            src={props.src}
+            alt='Animal'
+            onLoad={handleOnLoaded}
+          />
+        </figure>
+        <div className='card-item-info'>
+          <h5 className='card-item-text'>{props.text}</h5>
+        </div>
+      </Link>
+    </div>
   )
 }
 
